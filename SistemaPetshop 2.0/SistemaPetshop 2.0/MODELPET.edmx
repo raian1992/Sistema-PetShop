@@ -1,0 +1,2875 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+  <!-- EF Runtime content -->
+  <edmx:Runtime>
+    <!-- SSDL content -->
+    <edmx:StorageModels>
+    <Schema Namespace="LOJA_PETModel.Store" Alias="Self" Provider="System.Data.SqlClient" ProviderManifestToken="2012" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+  <EntityContainer Name="LOJA_PETModelStoreContainer">
+    <EntitySet Name="ATENDIMENTO_VET" EntityType="LOJA_PETModel.Store.ATENDIMENTO_VET" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="CEP" EntityType="LOJA_PETModel.Store.CEP" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="CFOP" EntityType="LOJA_PETModel.Store.CFOP" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="CIRURGIA" EntityType="LOJA_PETModel.Store.CIRURGIA" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="CLIENTES" EntityType="LOJA_PETModel.Store.CLIENTES" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="Compromissos" EntityType="LOJA_PETModel.Store.Compromissos" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="CONFIG" EntityType="LOJA_PETModel.Store.CONFIG" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="EMAIL" EntityType="LOJA_PETModel.Store.EMAIL" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="EMPRESA" EntityType="LOJA_PETModel.Store.EMPRESA" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="EMPRESA_EMAIL" EntityType="LOJA_PETModel.Store.EMPRESA_EMAIL" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="EMPRESA_USUARIO" EntityType="LOJA_PETModel.Store.EMPRESA_USUARIO" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="EMPRESA_VETERINARIO" EntityType="LOJA_PETModel.Store.EMPRESA_VETERINARIO" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="GRP" EntityType="LOJA_PETModel.Store.GRP" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="INTERNACAO" EntityType="LOJA_PETModel.Store.INTERNACAO" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="PAGAMENTOS" EntityType="LOJA_PETModel.Store.PAGAMENTOS" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="PAGAMENTOS_ATENDIMENTOS" EntityType="LOJA_PETModel.Store.PAGAMENTOS_ATENDIMENTOS" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="PAGAMENTOS_INTERNACAO" EntityType="LOJA_PETModel.Store.PAGAMENTOS_INTERNACAO" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="PERFIL" EntityType="LOJA_PETModel.Store.PERFIL" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="PETS" EntityType="LOJA_PETModel.Store.PETS" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="PROPRIETARIOS" EntityType="LOJA_PETModel.Store.PROPRIETARIOS" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="RECEITA" EntityType="LOJA_PETModel.Store.RECEITA" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="SERVICO" EntityType="LOJA_PETModel.Store.SERVICO" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="SERVICO_VETERINARIO" EntityType="LOJA_PETModel.Store.SERVICO_VETERINARIO" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="TOTAL_ATENDIMENTO" EntityType="LOJA_PETModel.Store.TOTAL_ATENDIMENTO" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="TOTAL_INTERNACAO_CIRURGIA" EntityType="LOJA_PETModel.Store.TOTAL_INTERNACAO_CIRURGIA" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="Tributacao" EntityType="LOJA_PETModel.Store.Tributacao" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="USUARIOS" EntityType="LOJA_PETModel.Store.USUARIOS" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="VET_CIRURGIA" EntityType="LOJA_PETModel.Store.VET_CIRURGIA" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="Veterinarios" EntityType="LOJA_PETModel.Store.Veterinarios" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="TAXAS" EntityType="LOJA_PETModel.Store.TAXAS" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="b_pessoas_empresa_pet" EntityType="LOJA_PETModel.Store.b_pessoas_empresa_pet" store:Type="Tables" Schema="dbo" />
+    <AssociationSet Name="FK_ATENDIMENTO_VETINTERNACAO" Association="LOJA_PETModel.Store.FK_ATENDIMENTO_VETINTERNACAO">
+      <End Role="ATENDIMENTO_VET" EntitySet="ATENDIMENTO_VET" />
+      <End Role="INTERNACAO" EntitySet="INTERNACAO" />
+    </AssociationSet>
+    <AssociationSet Name="FK_ATENDIMENTO_VETRECEITA" Association="LOJA_PETModel.Store.FK_ATENDIMENTO_VETRECEITA">
+      <End Role="ATENDIMENTO_VET" EntitySet="ATENDIMENTO_VET" />
+      <End Role="RECEITA" EntitySet="RECEITA" />
+    </AssociationSet>
+    <AssociationSet Name="FK_ATENDIMENTO_VETSERVICO_VETERINARIO" Association="LOJA_PETModel.Store.FK_ATENDIMENTO_VETSERVICO_VETERINARIO">
+      <End Role="ATENDIMENTO_VET" EntitySet="ATENDIMENTO_VET" />
+      <End Role="SERVICO_VETERINARIO" EntitySet="SERVICO_VETERINARIO" />
+    </AssociationSet>
+    <AssociationSet Name="FK_ATENDIMENTO_VETTOTAL_ATENDIMENTO" Association="LOJA_PETModel.Store.FK_ATENDIMENTO_VETTOTAL_ATENDIMENTO">
+      <End Role="ATENDIMENTO_VET" EntitySet="ATENDIMENTO_VET" />
+      <End Role="TOTAL_ATENDIMENTO" EntitySet="TOTAL_ATENDIMENTO" />
+    </AssociationSet>
+    <AssociationSet Name="FK_CIRURGIAATENDIMENTO_VET" Association="LOJA_PETModel.Store.FK_CIRURGIAATENDIMENTO_VET">
+      <End Role="CIRURGIA" EntitySet="CIRURGIA" />
+      <End Role="ATENDIMENTO_VET" EntitySet="ATENDIMENTO_VET" />
+    </AssociationSet>
+    <AssociationSet Name="FK_ClienteATENDIMENTO_VET" Association="LOJA_PETModel.Store.FK_ClienteATENDIMENTO_VET">
+      <End Role="PROPRIETARIOS" EntitySet="PROPRIETARIOS" />
+      <End Role="ATENDIMENTO_VET" EntitySet="ATENDIMENTO_VET" />
+    </AssociationSet>
+    <AssociationSet Name="FK_EMPRESAATENDIMENTO_VET" Association="LOJA_PETModel.Store.FK_EMPRESAATENDIMENTO_VET">
+      <End Role="EMPRESA" EntitySet="EMPRESA" />
+      <End Role="ATENDIMENTO_VET" EntitySet="ATENDIMENTO_VET" />
+    </AssociationSet>
+    <AssociationSet Name="FK_PETATENDIMENTO_VET" Association="LOJA_PETModel.Store.FK_PETATENDIMENTO_VET">
+      <End Role="PETS" EntitySet="PETS" />
+      <End Role="ATENDIMENTO_VET" EntitySet="ATENDIMENTO_VET" />
+    </AssociationSet>
+    <AssociationSet Name="FK_VeterinariosATENDIMENTO_VET" Association="LOJA_PETModel.Store.FK_VeterinariosATENDIMENTO_VET">
+      <End Role="Veterinarios" EntitySet="Veterinarios" />
+      <End Role="ATENDIMENTO_VET" EntitySet="ATENDIMENTO_VET" />
+    </AssociationSet>
+    <AssociationSet Name="FK_CIRURGIAINTERNACAO" Association="LOJA_PETModel.Store.FK_CIRURGIAINTERNACAO">
+      <End Role="CIRURGIA" EntitySet="CIRURGIA" />
+      <End Role="INTERNACAO" EntitySet="INTERNACAO" />
+    </AssociationSet>
+    <AssociationSet Name="FK_CIRURGIATOTAL_INTERNACAO_CIRURGIA" Association="LOJA_PETModel.Store.FK_CIRURGIATOTAL_INTERNACAO_CIRURGIA">
+      <End Role="CIRURGIA" EntitySet="CIRURGIA" />
+      <End Role="TOTAL_INTERNACAO_CIRURGIA" EntitySet="TOTAL_INTERNACAO_CIRURGIA" />
+    </AssociationSet>
+    <AssociationSet Name="FK_CIRURGIATOTAL_INTERNACAO_CIRURGIA1" Association="LOJA_PETModel.Store.FK_CIRURGIATOTAL_INTERNACAO_CIRURGIA1">
+      <End Role="CIRURGIA" EntitySet="CIRURGIA" />
+      <End Role="TOTAL_INTERNACAO_CIRURGIA" EntitySet="TOTAL_INTERNACAO_CIRURGIA" />
+    </AssociationSet>
+    <AssociationSet Name="FK_CIRURGIAVET_CIRURGIA" Association="LOJA_PETModel.Store.FK_CIRURGIAVET_CIRURGIA">
+      <End Role="CIRURGIA" EntitySet="CIRURGIA" />
+      <End Role="VET_CIRURGIA" EntitySet="VET_CIRURGIA" />
+    </AssociationSet>
+    <AssociationSet Name="FK_ClienteCIRURGIA" Association="LOJA_PETModel.Store.FK_ClienteCIRURGIA">
+      <End Role="PROPRIETARIOS" EntitySet="PROPRIETARIOS" />
+      <End Role="CIRURGIA" EntitySet="CIRURGIA" />
+    </AssociationSet>
+    <AssociationSet Name="FK_EMPRESACIRURGIA" Association="LOJA_PETModel.Store.FK_EMPRESACIRURGIA">
+      <End Role="EMPRESA" EntitySet="EMPRESA" />
+      <End Role="CIRURGIA" EntitySet="CIRURGIA" />
+    </AssociationSet>
+    <AssociationSet Name="FK_PETCIRURGIA" Association="LOJA_PETModel.Store.FK_PETCIRURGIA">
+      <End Role="PETS" EntitySet="PETS" />
+      <End Role="CIRURGIA" EntitySet="CIRURGIA" />
+    </AssociationSet>
+    <AssociationSet Name="FK_RECEITACIRURGIA" Association="LOJA_PETModel.Store.FK_RECEITACIRURGIA">
+      <End Role="CIRURGIA" EntitySet="CIRURGIA" />
+      <End Role="RECEITA" EntitySet="RECEITA" />
+    </AssociationSet>
+    <AssociationSet Name="FK_VeterinariosCIRURGIA" Association="LOJA_PETModel.Store.FK_VeterinariosCIRURGIA">
+      <End Role="Veterinarios" EntitySet="Veterinarios" />
+      <End Role="CIRURGIA" EntitySet="CIRURGIA" />
+    </AssociationSet>
+    <AssociationSet Name="FK_EMPRESACONFIG" Association="LOJA_PETModel.Store.FK_EMPRESACONFIG">
+      <End Role="CONFIG" EntitySet="CONFIG" />
+      <End Role="EMPRESA" EntitySet="EMPRESA" />
+    </AssociationSet>
+    <AssociationSet Name="FK_EMAILEMPRESA_EMAIL" Association="LOJA_PETModel.Store.FK_EMAILEMPRESA_EMAIL">
+      <End Role="EMAIL" EntitySet="EMAIL" />
+      <End Role="EMPRESA_EMAIL" EntitySet="EMPRESA_EMAIL" />
+    </AssociationSet>
+    <AssociationSet Name="FK_EMPRESA_EMAIL1" Association="LOJA_PETModel.Store.FK_EMPRESA_EMAIL1">
+      <End Role="EMPRESA" EntitySet="EMPRESA" />
+      <End Role="EMPRESA_EMAIL" EntitySet="EMPRESA_EMAIL" />
+    </AssociationSet>
+    <AssociationSet Name="FK_EMPRESAEMPRESA_USUARIO" Association="LOJA_PETModel.Store.FK_EMPRESAEMPRESA_USUARIO">
+      <End Role="EMPRESA" EntitySet="EMPRESA" />
+      <End Role="EMPRESA_USUARIO" EntitySet="EMPRESA_USUARIO" />
+    </AssociationSet>
+    <AssociationSet Name="FK_EMPRESAEMPRESA_VETERINARIO" Association="LOJA_PETModel.Store.FK_EMPRESAEMPRESA_VETERINARIO">
+      <End Role="EMPRESA" EntitySet="EMPRESA" />
+      <End Role="EMPRESA_VETERINARIO" EntitySet="EMPRESA_VETERINARIO" />
+    </AssociationSet>
+    <AssociationSet Name="FK_EMPRESAINTERNACAO" Association="LOJA_PETModel.Store.FK_EMPRESAINTERNACAO">
+      <End Role="EMPRESA" EntitySet="EMPRESA" />
+      <End Role="INTERNACAO" EntitySet="INTERNACAO" />
+    </AssociationSet>
+    <AssociationSet Name="FK_USUARIOSEMPRESA_USUARIO" Association="LOJA_PETModel.Store.FK_USUARIOSEMPRESA_USUARIO">
+      <End Role="USUARIOS" EntitySet="USUARIOS" />
+      <End Role="EMPRESA_USUARIO" EntitySet="EMPRESA_USUARIO" />
+    </AssociationSet>
+    <AssociationSet Name="FK_VeterinariosEMPRESA_VETERINARIO" Association="LOJA_PETModel.Store.FK_VeterinariosEMPRESA_VETERINARIO">
+      <End Role="Veterinarios" EntitySet="Veterinarios" />
+      <End Role="EMPRESA_VETERINARIO" EntitySet="EMPRESA_VETERINARIO" />
+    </AssociationSet>
+    <AssociationSet Name="FK_ClienteINTERNACAO" Association="LOJA_PETModel.Store.FK_ClienteINTERNACAO">
+      <End Role="PROPRIETARIOS" EntitySet="PROPRIETARIOS" />
+      <End Role="INTERNACAO" EntitySet="INTERNACAO" />
+    </AssociationSet>
+    <AssociationSet Name="FK_INTERNACAORECEITA" Association="LOJA_PETModel.Store.FK_INTERNACAORECEITA">
+      <End Role="INTERNACAO" EntitySet="INTERNACAO" />
+      <End Role="RECEITA" EntitySet="RECEITA" />
+    </AssociationSet>
+    <AssociationSet Name="FK_INTERNACAOSERVICO_VETERINARIO" Association="LOJA_PETModel.Store.FK_INTERNACAOSERVICO_VETERINARIO">
+      <End Role="INTERNACAO" EntitySet="INTERNACAO" />
+      <End Role="SERVICO_VETERINARIO" EntitySet="SERVICO_VETERINARIO" />
+    </AssociationSet>
+    <AssociationSet Name="FK_INTERNACAOTOTAL_INTERNACAO" Association="LOJA_PETModel.Store.FK_INTERNACAOTOTAL_INTERNACAO">
+      <End Role="INTERNACAO" EntitySet="INTERNACAO" />
+      <End Role="TOTAL_INTERNACAO_CIRURGIA" EntitySet="TOTAL_INTERNACAO_CIRURGIA" />
+    </AssociationSet>
+    <AssociationSet Name="FK_PETINTERNACAO" Association="LOJA_PETModel.Store.FK_PETINTERNACAO">
+      <End Role="PETS" EntitySet="PETS" />
+      <End Role="INTERNACAO" EntitySet="INTERNACAO" />
+    </AssociationSet>
+    <AssociationSet Name="FK_VeterinariosINTERNACAO" Association="LOJA_PETModel.Store.FK_VeterinariosINTERNACAO">
+      <End Role="Veterinarios" EntitySet="Veterinarios" />
+      <End Role="INTERNACAO" EntitySet="INTERNACAO" />
+    </AssociationSet>
+    <AssociationSet Name="FK_PAGAMENTOSPAGAMENTOS_ATENDIMENTO" Association="LOJA_PETModel.Store.FK_PAGAMENTOSPAGAMENTOS_ATENDIMENTO">
+      <End Role="PAGAMENTOS" EntitySet="PAGAMENTOS" />
+      <End Role="PAGAMENTOS_ATENDIMENTOS" EntitySet="PAGAMENTOS_ATENDIMENTOS" />
+    </AssociationSet>
+    <AssociationSet Name="FK_PAGAMENTOSPAGAMENTOS_INTERNACAO" Association="LOJA_PETModel.Store.FK_PAGAMENTOSPAGAMENTOS_INTERNACAO">
+      <End Role="PAGAMENTOS" EntitySet="PAGAMENTOS" />
+      <End Role="PAGAMENTOS_INTERNACAO" EntitySet="PAGAMENTOS_INTERNACAO" />
+    </AssociationSet>
+    <AssociationSet Name="FK_TOTAL_ATENDIMENTOPAGAMENTOS_ATENDIMENTO" Association="LOJA_PETModel.Store.FK_TOTAL_ATENDIMENTOPAGAMENTOS_ATENDIMENTO">
+      <End Role="TOTAL_ATENDIMENTO" EntitySet="TOTAL_ATENDIMENTO" />
+      <End Role="PAGAMENTOS_ATENDIMENTOS" EntitySet="PAGAMENTOS_ATENDIMENTOS" />
+    </AssociationSet>
+    <AssociationSet Name="FK_TOTAL_ATENDIMENTOPAGAMENTOS_ATENDIMENTO1" Association="LOJA_PETModel.Store.FK_TOTAL_ATENDIMENTOPAGAMENTOS_ATENDIMENTO1">
+      <End Role="TOTAL_INTERNACAO_CIRURGIA" EntitySet="TOTAL_INTERNACAO_CIRURGIA" />
+      <End Role="PAGAMENTOS_INTERNACAO" EntitySet="PAGAMENTOS_INTERNACAO" />
+    </AssociationSet>
+    <AssociationSet Name="FK_PERFILUSUARIOS" Association="LOJA_PETModel.Store.FK_PERFILUSUARIOS">
+      <End Role="PERFIL" EntitySet="PERFIL" />
+      <End Role="USUARIOS" EntitySet="USUARIOS" />
+    </AssociationSet>
+    <AssociationSet Name="FK_PETCliente" Association="LOJA_PETModel.Store.FK_PETCliente">
+      <End Role="PROPRIETARIOS" EntitySet="PROPRIETARIOS" />
+      <End Role="PETS" EntitySet="PETS" />
+    </AssociationSet>
+    <AssociationSet Name="FK_SERVICOSERVICO_VETERINARIO" Association="LOJA_PETModel.Store.FK_SERVICOSERVICO_VETERINARIO">
+      <End Role="SERVICO" EntitySet="SERVICO" />
+      <End Role="SERVICO_VETERINARIO" EntitySet="SERVICO_VETERINARIO" />
+    </AssociationSet>
+    <AssociationSet Name="FK_VeterinariosSERVICO_VETERINARIO" Association="LOJA_PETModel.Store.FK_VeterinariosSERVICO_VETERINARIO">
+      <End Role="Veterinarios" EntitySet="Veterinarios" />
+      <End Role="SERVICO_VETERINARIO" EntitySet="SERVICO_VETERINARIO" />
+    </AssociationSet>
+    <AssociationSet Name="FK_VeterinariosVET_CIRURGIA" Association="LOJA_PETModel.Store.FK_VeterinariosVET_CIRURGIA">
+      <End Role="Veterinarios" EntitySet="Veterinarios" />
+      <End Role="VET_CIRURGIA" EntitySet="VET_CIRURGIA" />
+    </AssociationSet>
+    <AssociationSet Name="TAXASPAGAMENTOS" Association="LOJA_PETModel.Store.TAXASPAGAMENTOS">
+      <End Role="TAXAS" EntitySet="TAXAS" />
+      <End Role="PAGAMENTOS" EntitySet="PAGAMENTOS" />
+    </AssociationSet>
+  </EntityContainer>
+  <EntityType Name="ATENDIMENTO_VET">
+    <Key>
+      <PropertyRef Name="ID_ATENDIMENTO" />
+    </Key>
+    <Property Name="ID_ATENDIMENTO" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="ID_VET" Type="int" Nullable="false" />
+    <Property Name="ID_PET" Type="int" Nullable="false" />
+    <Property Name="ID_EMPRESA" Type="int" Nullable="false" />
+    <Property Name="ID_CLIENTE" Type="int" Nullable="false" />
+    <Property Name="SINTOMAS" Type="nvarchar(max)" Nullable="true" />
+    <Property Name="REQUISICAO_EXAMES" Type="nvarchar(max)" Nullable="true" />
+    <Property Name="PESO_PET" Type="float" Nullable="false" />
+    <Property Name="ID_INTERNACAO" Type="int" Nullable="true" />
+    <Property Name="ID_CIRURGIA" Type="int" Nullable="true" />
+    <Property Name="TIPO_ATENDIMENTO" Type="int" Nullable="false" />
+    <Property Name="TAXASID_TAXAS" Type="int" Nullable="false" />
+  </EntityType>
+  <EntityType Name="CEP">
+    <Key>
+      <PropertyRef Name="ID_CEP" />
+    </Key>
+    <Property Name="ID_CEP" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="NUM_CEP" Type="varchar" Nullable="false" MaxLength="10" />
+    <Property Name="ENDERECO" Type="nvarchar" Nullable="true" MaxLength="40" />
+    <Property Name="COMPLEMENTO" Type="nvarchar" Nullable="true" MaxLength="40" />
+    <Property Name="BAIRRO" Type="varchar" Nullable="false" MaxLength="40" />
+    <Property Name="CIDADE" Type="varchar" Nullable="false" MaxLength="40" />
+    <Property Name="ESTADO" Type="varchar" Nullable="false" MaxLength="20" />
+    <Property Name="PAIS" Type="nvarchar" Nullable="true" MaxLength="40" />
+    <Property Name="IBGE" Type="nvarchar" Nullable="true" MaxLength="25" />
+    <Property Name="COD_CEP" Type="int" Nullable="false" />
+  </EntityType>
+  <EntityType Name="CFOP">
+    <Key>
+      <PropertyRef Name="ID_CFOP" />
+    </Key>
+    <Property Name="ID_CFOP" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="CFOP1" Type="varchar" Nullable="false" MaxLength="5" />
+    <Property Name="Descricao" Type="varchar" Nullable="false" MaxLength="50" />
+    <Property Name="MOV_ESTQ" Type="char" Nullable="false" MaxLength="1" />
+    <Property Name="ATUALIZA_CUSTO" Type="char" Nullable="false" MaxLength="1" />
+    <Property Name="TIPO_MOV" Type="char" Nullable="false" MaxLength="1" />
+    <Property Name="ATIVO" Type="char" Nullable="false" MaxLength="1" />
+  </EntityType>
+  <EntityType Name="CIRURGIA">
+    <Key>
+      <PropertyRef Name="ID_CIRURGIA" />
+    </Key>
+    <Property Name="ID_CIRURGIA" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="ID_VET_PRINCIPAL" Type="int" Nullable="false" />
+    <Property Name="ID_PET" Type="int" Nullable="false" />
+    <Property Name="ID_EMPRESA" Type="int" Nullable="false" />
+    <Property Name="ID_CLIENTE" Type="int" Nullable="false" />
+    <Property Name="PESO_PET" Type="float" Nullable="false" />
+  </EntityType>
+  <EntityType Name="CLIENTES">
+    <Key>
+      <PropertyRef Name="COD_CLIENTE" />
+    </Key>
+    <Property Name="COD_CLIENTE" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="CPF" Type="varchar" Nullable="true" MaxLength="14" />
+    <Property Name="NOME" Type="varchar" Nullable="false" MaxLength="40" />
+    <Property Name="TELEFONE" Type="varchar" Nullable="true" MaxLength="11" />
+    <Property Name="CELULAR" Type="varchar" Nullable="true" MaxLength="11" />
+    <Property Name="EMAIL" Type="varchar" Nullable="true" MaxLength="40" />
+    <Property Name="CEP" Type="varchar" Nullable="true" MaxLength="20" />
+    <Property Name="RUA" Type="varchar" Nullable="true" MaxLength="40" />
+    <Property Name="NUMERO" Type="varchar" Nullable="true" MaxLength="10" />
+    <Property Name="BAIRRO" Type="varchar" Nullable="true" MaxLength="40" />
+    <Property Name="CIDADE" Type="varchar" Nullable="true" MaxLength="40" />
+    <Property Name="ESTADO" Type="varchar" Nullable="true" MaxLength="10" />
+    <Property Name="ATIVO" Type="char" Nullable="true" MaxLength="1" />
+  </EntityType>
+  <EntityType Name="Compromissos">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Data" Type="datetime" Nullable="true" />
+    <Property Name="Hora" Type="time" Nullable="true" Precision="7" />
+    <Property Name="Descricao" Type="varchar(max)" Nullable="true" />
+    <Property Name="USUARIO_CRIOU_COMP" Type="int" Nullable="false" />
+    <Property Name="USUARIO_P_COMP" Type="int" Nullable="true" />
+    <Property Name="Entidade_Registro" Type="nvarchar(max)" Nullable="true" />
+    <Property Name="ID_REGISTRO" Type="int" Nullable="true" />
+    <Property Name="Concluido" Type="bit" Nullable="true" />
+  </EntityType>
+  <EntityType Name="CONFIG">
+    <Key>
+      <PropertyRef Name="ID_CONFIG" />
+    </Key>
+    <Property Name="ID_CONFIG" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="AT_CHV" Type="smallint" Nullable="false" />
+    <Property Name="DT_INST" Type="datetime" Nullable="false" />
+    <Property Name="DT_VAL" Type="datetime" Nullable="false" />
+    <Property Name="MOV_ESTOQUE" Type="bit" Nullable="false" />
+    <Property Name="UT_BANHOETOSA" Type="bit" Nullable="false" />
+    <Property Name="UT_FIN" Type="bit" Nullable="false" />
+    <Property Name="UT_VENDA" Type="bit" Nullable="false" />
+    <Property Name="AT_ESTQ" Type="bit" Nullable="false" />
+    <Property Name="Val_CPF_CNPJ" Type="bit" Nullable="false" />
+    <Property Name="ATIVO" Type="bit" Nullable="false" />
+  </EntityType>
+  <EntityType Name="EMAIL">
+    <Key>
+      <PropertyRef Name="ID_EMAIL" />
+    </Key>
+    <Property Name="ID_EMAIL" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="END_EMAIL" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="SENHA" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="SMTP" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="PORTA" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="Req_AUT" Type="bit" Nullable="false" />
+    <Property Name="Req_SSL" Type="bit" Nullable="false" />
+  </EntityType>
+  <EntityType Name="EMPRESA">
+    <Key>
+      <PropertyRef Name="ID_EMPRESA" />
+    </Key>
+    <Property Name="ID_EMPRESA" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="RAZAO_SOCIAL" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="FANTASIA" Type="nvarchar(max)" Nullable="true" />
+    <Property Name="CNPJ_CPF" Type="nvarchar(max)" Nullable="true" />
+    <Property Name="IE_RG" Type="nvarchar(max)" Nullable="true" />
+    <Property Name="CEP" Type="nvarchar" Nullable="true" MaxLength="10" />
+    <Property Name="ENDERECO" Type="nvarchar" Nullable="true" MaxLength="40" />
+    <Property Name="NUMERO" Type="nvarchar" Nullable="true" MaxLength="10" />
+    <Property Name="COMPLEMENTO" Type="nvarchar" Nullable="true" MaxLength="40" />
+    <Property Name="BAIRRO" Type="nvarchar" Nullable="true" MaxLength="40" />
+    <Property Name="CIDADE" Type="nvarchar" Nullable="true" MaxLength="40" />
+    <Property Name="ESTADO" Type="nvarchar" Nullable="true" MaxLength="40" />
+    <Property Name="PAIS" Type="nvarchar" Nullable="true" MaxLength="40" />
+    <Property Name="TELEFONE" Type="nvarchar(max)" Nullable="true" />
+    <Property Name="CELULAR" Type="nvarchar(max)" Nullable="true" />
+    <Property Name="EMAIL" Type="nvarchar(max)" Nullable="true" />
+    <Property Name="CHV" Type="nvarchar(max)" Nullable="true" />
+    <Property Name="ID_CONFIG" Type="int" Nullable="false" />
+    <Property Name="IMAGEM" Type="varbinary(max)" Nullable="true" />
+    <Property Name="TIPO_EMPRESA" Type="int" Nullable="false" />
+    <Property Name="Tipo_juros" Type="nvarchar" Nullable="true" MaxLength="1" />
+    <Property Name="Cobr_juros" Type="nvarchar" Nullable="true" MaxLength="1" />
+    <Property Name="P_juros" Type="decimal" Nullable="true" Precision="18" Scale="0" />
+    <Property Name="P_MULTA" Type="decimal" Nullable="true" Precision="18" Scale="0" />
+    <Property Name="ATIVO" Type="bit" Nullable="false" />
+  </EntityType>
+  <EntityType Name="EMPRESA_EMAIL">
+    <Key>
+      <PropertyRef Name="ID_ASSOCIACAO" />
+    </Key>
+    <Property Name="ID_ASSOCIACAO" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="ID_EMPRESA" Type="int" Nullable="false" />
+    <Property Name="ID_EMAIL" Type="int" Nullable="false" />
+  </EntityType>
+  <EntityType Name="EMPRESA_USUARIO">
+    <Key>
+      <PropertyRef Name="ID_ASSOCIACAO" />
+    </Key>
+    <Property Name="ID_EMPRESA" Type="int" Nullable="false" />
+    <Property Name="ID_USUARIO" Type="int" Nullable="false" />
+    <Property Name="ID_ASSOCIACAO" Type="int" Nullable="false" />
+  </EntityType>
+  <EntityType Name="EMPRESA_VETERINARIO">
+    <Key>
+      <PropertyRef Name="ID_ASSOCIACAO" />
+    </Key>
+    <Property Name="ID_ASSOCIACAO" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="ID_EMPRESA" Type="int" Nullable="false" />
+    <Property Name="ID_VET" Type="int" Nullable="false" />
+  </EntityType>
+  <EntityType Name="GRP">
+    <Key>
+      <PropertyRef Name="COD_GRP" />
+    </Key>
+    <Property Name="COD_GRP" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="nome_grupo" Type="varchar" Nullable="false" MaxLength="50" />
+    <Property Name="Prod_Vend" Type="char" Nullable="false" MaxLength="1" />
+  </EntityType>
+  <EntityType Name="INTERNACAO">
+    <Key>
+      <PropertyRef Name="ID_INTERNACAO" />
+    </Key>
+    <Property Name="ID_INTERNACAO" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="ID_VET" Type="int" Nullable="false" />
+    <Property Name="ID_PET" Type="int" Nullable="false" />
+    <Property Name="ID_EMPRESA" Type="int" Nullable="false" />
+    <Property Name="ID_CLIENTE" Type="int" Nullable="false" />
+    <Property Name="PESO_PET" Type="float" Nullable="false" />
+    <Property Name="ID_ATENDIMENTO" Type="int" Nullable="true" />
+    <Property Name="ID_CIRURGIA" Type="int" Nullable="true" />
+  </EntityType>
+  <EntityType Name="PAGAMENTOS">
+    <Key>
+      <PropertyRef Name="ID_PAGAMENTOS" />
+    </Key>
+    <Property Name="ID_PAGAMENTOS" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="NOME" Type="nvarchar" Nullable="false" MaxLength="20" />
+    <Property Name="TIPO_PAG" Type="int" Nullable="true" />
+    <Property Name="ID_TAXAS" Type="int" Nullable="false" />
+    <Property Name="Gera_Fin" Type="bit" Nullable="false" />
+    <Property Name="ATIVO" Type="bit" Nullable="false" />
+  </EntityType>
+  <EntityType Name="PAGAMENTOS_ATENDIMENTOS">
+    <Key>
+      <PropertyRef Name="ID_ASSOCIACAO" />
+    </Key>
+    <Property Name="ID_ASSOCIACAO" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="ID_PAGAMENTO" Type="int" Nullable="false" />
+    <Property Name="NOME_PAGAMENTO" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="VALOR_PAGAMENTO" Type="decimal" Nullable="false" Precision="18" Scale="0" />
+    <Property Name="ID_TIPO_ATENDIMENTO" Type="int" Nullable="false" />
+    <Property Name="DIVIDO_VEZES" Type="int" Nullable="true" />
+    <Property Name="DATA_FECHAMENTO" Type="datetime" Nullable="false" />
+  </EntityType>
+  <EntityType Name="PAGAMENTOS_INTERNACAO">
+    <Key>
+      <PropertyRef Name="ID_ASSOCIACAO" />
+    </Key>
+    <Property Name="ID_ASSOCIACAO" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="ID_PAGAMENTO" Type="int" Nullable="false" />
+    <Property Name="NOME_PAGAMENTO" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="VALOR_PAGAMENTO" Type="decimal" Nullable="false" Precision="18" Scale="2" />
+    <Property Name="ID_TIPO_ATENDIMENTO" Type="int" Nullable="false" />
+    <Property Name="DIVIDO_VEZES" Type="int" Nullable="true" />
+    <Property Name="DATA_FECHAMENTO" Type="datetime" Nullable="false" />
+  </EntityType>
+  <EntityType Name="PERFIL">
+    <Key>
+      <PropertyRef Name="ID_PERFIL" />
+    </Key>
+    <Property Name="ID_PERFIL" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="DESCRICAO" Type="nvarchar(max)" Nullable="false" />
+  </EntityType>
+  <EntityType Name="PETS">
+    <Key>
+      <PropertyRef Name="ID_PET" />
+    </Key>
+    <Property Name="ID_PET" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="NOME_PET" Type="nvarchar" Nullable="false" MaxLength="40" />
+    <Property Name="COD_CLIENTE" Type="int" Nullable="false" />
+    <Property Name="RACA_PET" Type="nvarchar" Nullable="false" MaxLength="20" />
+    <Property Name="SEXO_PET" Type="nvarchar" Nullable="false" MaxLength="20" />
+    <Property Name="DATANASC_PET" Type="datetime" Nullable="true" />
+    <Property Name="IDADE" Type="nvarchar" Nullable="true" MaxLength="20" />
+    <Property Name="ESPECIE_PET" Type="nvarchar" Nullable="true" MaxLength="40" />
+    <Property Name="ATIVO" Type="bit" Nullable="false" />
+  </EntityType>
+  <EntityType Name="PROPRIETARIOS">
+    <Key>
+      <PropertyRef Name="ID_PROPRIETARIO" />
+    </Key>
+    <Property Name="ID_PROPRIETARIO" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="NOME_PROPRIETARIO" Type="nvarchar" Nullable="false" MaxLength="40" />
+    <Property Name="EMAIL" Type="nvarchar" Nullable="true" MaxLength="30" />
+    <Property Name="CELULAR" Type="nvarchar" Nullable="true" MaxLength="13" />
+    <Property Name="FIXO" Type="nvarchar" Nullable="true" MaxLength="11" />
+    <Property Name="CEP" Type="nvarchar" Nullable="true" MaxLength="8" />
+    <Property Name="RUA_AVENIDA" Type="nvarchar" Nullable="true" MaxLength="40" />
+    <Property Name="NUMERO" Type="nvarchar" Nullable="true" MaxLength="10" />
+    <Property Name="BAIRRO" Type="nvarchar" Nullable="true" MaxLength="40" />
+    <Property Name="CIDADE" Type="nvarchar" Nullable="true" MaxLength="40" />
+    <Property Name="ESTADO" Type="nvarchar" Nullable="true" MaxLength="40" />
+    <Property Name="ATIVO" Type="bit" Nullable="false" />
+  </EntityType>
+  <EntityType Name="RECEITA">
+    <Key>
+      <PropertyRef Name="ID_RECEITA" />
+    </Key>
+    <Property Name="ID_RECEITA" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="ID_ATENDIMENTO" Type="int" Nullable="true" />
+    <Property Name="ID_INTERNACAO" Type="int" Nullable="true" />
+    <Property Name="ID_CIRURGIA" Type="int" Nullable="true" />
+    <Property Name="DESCRICAO_RECEITA" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="DADOS_RECEITA" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="DATA_RECEITA" Type="datetime" Nullable="false" />
+    <Property Name="ATIVA" Type="bit" Nullable="false" />
+  </EntityType>
+  <EntityType Name="SERVICO">
+    <Key>
+      <PropertyRef Name="ID_SERVICO" />
+    </Key>
+    <Property Name="ID_SERVICO" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="NOME_SERVICO" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="VALOR_SERVICO" Type="decimal" Nullable="false" Precision="18" Scale="2" />
+    <Property Name="ATIVO" Type="bit" Nullable="false" />
+  </EntityType>
+  <EntityType Name="SERVICO_VETERINARIO">
+    <Key>
+      <PropertyRef Name="ID_ASSOCIACAO" />
+    </Key>
+    <Property Name="ID_ASSOCIACAO" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="ID_SERVICO" Type="int" Nullable="false" />
+    <Property Name="NOME_SERVICO" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="VALOR_SERVICO" Type="decimal" Nullable="false" Precision="18" Scale="2" />
+    <Property Name="ID_ATENDIMENTO" Type="int" Nullable="true" />
+    <Property Name="ID_INTERNACAO" Type="int" Nullable="true" />
+    <Property Name="ID_VET" Type="int" Nullable="false" />
+    <Property Name="DATA_EXECUCAO" Type="datetime" Nullable="false" />
+  </EntityType>
+  <EntityType Name="TOTAL_ATENDIMENTO">
+    <Key>
+      <PropertyRef Name="ID_ASSOCIACAO" />
+    </Key>
+    <Property Name="ID_ASSOCIACAO" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="ID_ATENDIMENTO" Type="int" Nullable="false" />
+    <Property Name="SUBTOTAL" Type="decimal" Nullable="false" Precision="18" Scale="2" />
+    <Property Name="DESCONTO" Type="decimal" Nullable="false" Precision="18" Scale="2" />
+    <Property Name="ACRESCIMO" Type="decimal" Nullable="false" Precision="18" Scale="2" />
+    <Property Name="TOTAL" Type="decimal" Nullable="false" Precision="18" Scale="2" />
+    <Property Name="DATA_FINALIZACAO" Type="datetime" Nullable="false" />
+  </EntityType>
+  <EntityType Name="TOTAL_INTERNACAO_CIRURGIA">
+    <Key>
+      <PropertyRef Name="ID_ASSOCIACAO" />
+    </Key>
+    <Property Name="ID_ASSOCIACAO" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="ID_INTERNACAO" Type="int" Nullable="true" />
+    <Property Name="ID_CIRURGIA" Type="int" Nullable="true" />
+    <Property Name="SUBTOTAL" Type="decimal" Nullable="false" Precision="18" Scale="2" />
+    <Property Name="DESCONTO" Type="decimal" Nullable="false" Precision="18" Scale="2" />
+    <Property Name="ACRESCIMO" Type="decimal" Nullable="false" Precision="18" Scale="2" />
+    <Property Name="TOTAL" Type="decimal" Nullable="false" Precision="18" Scale="2" />
+    <Property Name="DATA_FINALIZACAO" Type="datetime" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Tributacao">
+    <Key>
+      <PropertyRef Name="ID_TRIB" />
+    </Key>
+    <Property Name="ID_TRIB" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="TRBID" Type="varchar" Nullable="false" MaxLength="3" />
+    <Property Name="NOME" Type="varchar" Nullable="false" MaxLength="50" />
+    <Property Name="CST_ENTRADA" Type="varchar" Nullable="false" MaxLength="3" />
+    <Property Name="CSOSN_ENTRADA" Type="varchar" Nullable="false" MaxLength="4" />
+    <Property Name="CFOP_ENTRADA_DE" Type="varchar" Nullable="false" MaxLength="5" />
+    <Property Name="CFOP_ENTRADA_DEV_DE" Type="varchar" Nullable="false" MaxLength="5" />
+    <Property Name="CFOP_ENTRADA_DEV_FE" Type="varchar" Nullable="false" MaxLength="5" />
+    <Property Name="CFOP_ENTRADA_FE" Type="varchar" Nullable="false" MaxLength="5" />
+    <Property Name="CST_SAIDA" Type="varchar" Nullable="false" MaxLength="3" />
+    <Property Name="CSOSN_SAIDA" Type="varchar" Nullable="false" MaxLength="4" />
+    <Property Name="CFOP_SAIDA_DE" Type="varchar" Nullable="false" MaxLength="5" />
+    <Property Name="CFOP_SAIDA_FE" Type="varchar" Nullable="false" MaxLength="5" />
+    <Property Name="CFOP_SAIDA_DEV_DE" Type="varchar" Nullable="false" MaxLength="5" />
+    <Property Name="CFOP_SAIDA_DEV_FE" Type="varchar" Nullable="false" MaxLength="5" />
+    <Property Name="ATIVO" Type="char" Nullable="false" MaxLength="1" />
+  </EntityType>
+  <EntityType Name="USUARIOS">
+    <Key>
+      <PropertyRef Name="Id_USUARIO" />
+    </Key>
+    <Property Name="Id_USUARIO" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="NOME" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="lOGIN" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="SENHA" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="CONTRA_SENHA" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="Email" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="ID_PERFIL" Type="int" Nullable="false" />
+    <Property Name="ATIVO" Type="bit" Nullable="false" />
+  </EntityType>
+  <EntityType Name="VET_CIRURGIA">
+    <Key>
+      <PropertyRef Name="ID_ASSOCIACAO" />
+    </Key>
+    <Property Name="ID_ASSOCIACAO" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="ID_VET" Type="int" Nullable="false" />
+    <Property Name="ID_CIRURGIA" Type="int" Nullable="false" />
+    <Property Name="DIVIDIR_CIRURGIA" Type="bit" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Veterinarios">
+    <Key>
+      <PropertyRef Name="ID_VET" />
+    </Key>
+    <Property Name="ID_VET" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="NOME_VET" Type="nvarchar" Nullable="false" MaxLength="40" />
+    <Property Name="CPF" Type="nvarchar" Nullable="true" MaxLength="11" />
+    <Property Name="CRMV" Type="nvarchar" Nullable="false" MaxLength="20" />
+    <Property Name="TELEFONE" Type="nvarchar" Nullable="true" MaxLength="11" />
+    <Property Name="CELULAR" Type="nvarchar" Nullable="true" MaxLength="13" />
+    <Property Name="ATIVO" Type="bit" Nullable="false" />
+  </EntityType>
+  <EntityType Name="TAXAS">
+    <Key>
+      <PropertyRef Name="ID_TAXAS" />
+    </Key>
+    <Property Name="ID_TAXAS" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="DESCRICAOTX" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="TAXACREDITO1" Type="decimal" Nullable="false" Precision="18" Scale="2" />
+    <Property Name="TAXACREDITO2" Type="decimal" Nullable="false" Precision="18" Scale="2" />
+    <Property Name="TAXACREDITO3" Type="decimal" Nullable="false" Precision="18" Scale="2" />
+    <Property Name="TAXACREDITO4" Type="decimal" Nullable="false" Precision="18" Scale="2" />
+    <Property Name="TAXACREDITO5" Type="decimal" Nullable="false" Precision="18" Scale="2" />
+    <Property Name="TAXACREDITO6" Type="decimal" Nullable="false" Precision="18" Scale="2" />
+    <Property Name="TAXACREDITO7" Type="decimal" Nullable="false" Precision="18" Scale="2" />
+    <Property Name="TAXACREDITO10" Type="decimal" Nullable="false" Precision="18" Scale="2" />
+    <Property Name="TAXADEBITO" Type="decimal" Nullable="false" Precision="18" Scale="2" />
+    <Property Name="TAXABOLETO" Type="decimal" Nullable="false" Precision="18" Scale="2" />
+    <Property Name="P_DIV" Type="bit" Nullable="false" />
+    <Property Name="ATIVO" Type="bit" Nullable="false" />
+  </EntityType>
+  <EntityType Name="b_pessoas_empresa_pet">
+    <Key>
+      <PropertyRef Name="NOME_PET" />
+      <PropertyRef Name="ID_PET" />
+      <PropertyRef Name="RACA_PET" />
+      <PropertyRef Name="SEXO_PET" />
+      <PropertyRef Name="NOME_PROPRIETARIO" />
+      <PropertyRef Name="ATIVO" />
+      <PropertyRef Name="RAZAO_SOCIAL" />
+    </Key>
+    <Property Name="NOME_PET" Type="nvarchar" Nullable="false" MaxLength="40" />
+    <Property Name="ESPECIE_PET" Type="nvarchar" Nullable="true" MaxLength="40" />
+    <Property Name="ID_PET" Type="int" Nullable="false" />
+    <Property Name="IDADE" Type="nvarchar" Nullable="true" MaxLength="20" />
+    <Property Name="RACA_PET" Type="nvarchar" Nullable="false" MaxLength="20" />
+    <Property Name="SEXO_PET" Type="nvarchar" Nullable="false" MaxLength="20" />
+    <Property Name="NOME_PROPRIETARIO" Type="nvarchar" Nullable="false" MaxLength="40" />
+    <Property Name="CELULAR" Type="nvarchar" Nullable="true" MaxLength="13" />
+    <Property Name="FIXO" Type="nvarchar" Nullable="true" MaxLength="11" />
+    <Property Name="CIDADE" Type="nvarchar" Nullable="true" MaxLength="40" />
+    <Property Name="ESTADO" Type="nvarchar" Nullable="true" MaxLength="40" />
+    <Property Name="ATIVO" Type="bit" Nullable="false" />
+    <Property Name="FANTASIA" Type="nvarchar(max)" Nullable="true" />
+    <Property Name="RAZAO_SOCIAL" Type="nvarchar(max)" Nullable="false" />
+  </EntityType>
+  <Association Name="FK_ATENDIMENTO_VETINTERNACAO">
+    <End Role="ATENDIMENTO_VET" Type="LOJA_PETModel.Store.ATENDIMENTO_VET" Multiplicity="0..1" />
+    <End Role="INTERNACAO" Type="LOJA_PETModel.Store.INTERNACAO" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="ATENDIMENTO_VET">
+        <PropertyRef Name="ID_ATENDIMENTO" />
+      </Principal>
+      <Dependent Role="INTERNACAO">
+        <PropertyRef Name="ID_ATENDIMENTO" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_ATENDIMENTO_VETRECEITA">
+    <End Role="ATENDIMENTO_VET" Type="LOJA_PETModel.Store.ATENDIMENTO_VET" Multiplicity="0..1" />
+    <End Role="RECEITA" Type="LOJA_PETModel.Store.RECEITA" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="ATENDIMENTO_VET">
+        <PropertyRef Name="ID_ATENDIMENTO" />
+      </Principal>
+      <Dependent Role="RECEITA">
+        <PropertyRef Name="ID_ATENDIMENTO" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_ATENDIMENTO_VETSERVICO_VETERINARIO">
+    <End Role="ATENDIMENTO_VET" Type="LOJA_PETModel.Store.ATENDIMENTO_VET" Multiplicity="0..1" />
+    <End Role="SERVICO_VETERINARIO" Type="LOJA_PETModel.Store.SERVICO_VETERINARIO" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="ATENDIMENTO_VET">
+        <PropertyRef Name="ID_ATENDIMENTO" />
+      </Principal>
+      <Dependent Role="SERVICO_VETERINARIO">
+        <PropertyRef Name="ID_ATENDIMENTO" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_ATENDIMENTO_VETTOTAL_ATENDIMENTO">
+    <End Role="ATENDIMENTO_VET" Type="LOJA_PETModel.Store.ATENDIMENTO_VET" Multiplicity="1" />
+    <End Role="TOTAL_ATENDIMENTO" Type="LOJA_PETModel.Store.TOTAL_ATENDIMENTO" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="ATENDIMENTO_VET">
+        <PropertyRef Name="ID_ATENDIMENTO" />
+      </Principal>
+      <Dependent Role="TOTAL_ATENDIMENTO">
+        <PropertyRef Name="ID_ATENDIMENTO" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_CIRURGIAATENDIMENTO_VET">
+    <End Role="CIRURGIA" Type="LOJA_PETModel.Store.CIRURGIA" Multiplicity="0..1" />
+    <End Role="ATENDIMENTO_VET" Type="LOJA_PETModel.Store.ATENDIMENTO_VET" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="CIRURGIA">
+        <PropertyRef Name="ID_CIRURGIA" />
+      </Principal>
+      <Dependent Role="ATENDIMENTO_VET">
+        <PropertyRef Name="ID_CIRURGIA" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_ClienteATENDIMENTO_VET">
+    <End Role="PROPRIETARIOS" Type="LOJA_PETModel.Store.PROPRIETARIOS" Multiplicity="1" />
+    <End Role="ATENDIMENTO_VET" Type="LOJA_PETModel.Store.ATENDIMENTO_VET" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="PROPRIETARIOS">
+        <PropertyRef Name="ID_PROPRIETARIO" />
+      </Principal>
+      <Dependent Role="ATENDIMENTO_VET">
+        <PropertyRef Name="ID_CLIENTE" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_EMPRESAATENDIMENTO_VET">
+    <End Role="EMPRESA" Type="LOJA_PETModel.Store.EMPRESA" Multiplicity="1" />
+    <End Role="ATENDIMENTO_VET" Type="LOJA_PETModel.Store.ATENDIMENTO_VET" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="EMPRESA">
+        <PropertyRef Name="ID_EMPRESA" />
+      </Principal>
+      <Dependent Role="ATENDIMENTO_VET">
+        <PropertyRef Name="ID_EMPRESA" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_PETATENDIMENTO_VET">
+    <End Role="PETS" Type="LOJA_PETModel.Store.PETS" Multiplicity="1" />
+    <End Role="ATENDIMENTO_VET" Type="LOJA_PETModel.Store.ATENDIMENTO_VET" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="PETS">
+        <PropertyRef Name="ID_PET" />
+      </Principal>
+      <Dependent Role="ATENDIMENTO_VET">
+        <PropertyRef Name="ID_PET" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_VeterinariosATENDIMENTO_VET">
+    <End Role="Veterinarios" Type="LOJA_PETModel.Store.Veterinarios" Multiplicity="1" />
+    <End Role="ATENDIMENTO_VET" Type="LOJA_PETModel.Store.ATENDIMENTO_VET" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Veterinarios">
+        <PropertyRef Name="ID_VET" />
+      </Principal>
+      <Dependent Role="ATENDIMENTO_VET">
+        <PropertyRef Name="ID_VET" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_CIRURGIAINTERNACAO">
+    <End Role="CIRURGIA" Type="LOJA_PETModel.Store.CIRURGIA" Multiplicity="0..1" />
+    <End Role="INTERNACAO" Type="LOJA_PETModel.Store.INTERNACAO" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="CIRURGIA">
+        <PropertyRef Name="ID_CIRURGIA" />
+      </Principal>
+      <Dependent Role="INTERNACAO">
+        <PropertyRef Name="ID_CIRURGIA" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_CIRURGIATOTAL_INTERNACAO_CIRURGIA">
+    <End Role="CIRURGIA" Type="LOJA_PETModel.Store.CIRURGIA" Multiplicity="0..1" />
+    <End Role="TOTAL_INTERNACAO_CIRURGIA" Type="LOJA_PETModel.Store.TOTAL_INTERNACAO_CIRURGIA" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="CIRURGIA">
+        <PropertyRef Name="ID_CIRURGIA" />
+      </Principal>
+      <Dependent Role="TOTAL_INTERNACAO_CIRURGIA">
+        <PropertyRef Name="ID_CIRURGIA" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_CIRURGIATOTAL_INTERNACAO_CIRURGIA1">
+    <End Role="CIRURGIA" Type="LOJA_PETModel.Store.CIRURGIA" Multiplicity="0..1" />
+    <End Role="TOTAL_INTERNACAO_CIRURGIA" Type="LOJA_PETModel.Store.TOTAL_INTERNACAO_CIRURGIA" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="CIRURGIA">
+        <PropertyRef Name="ID_CIRURGIA" />
+      </Principal>
+      <Dependent Role="TOTAL_INTERNACAO_CIRURGIA">
+        <PropertyRef Name="ID_CIRURGIA" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_CIRURGIAVET_CIRURGIA">
+    <End Role="CIRURGIA" Type="LOJA_PETModel.Store.CIRURGIA" Multiplicity="1" />
+    <End Role="VET_CIRURGIA" Type="LOJA_PETModel.Store.VET_CIRURGIA" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="CIRURGIA">
+        <PropertyRef Name="ID_CIRURGIA" />
+      </Principal>
+      <Dependent Role="VET_CIRURGIA">
+        <PropertyRef Name="ID_CIRURGIA" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_ClienteCIRURGIA">
+    <End Role="PROPRIETARIOS" Type="LOJA_PETModel.Store.PROPRIETARIOS" Multiplicity="1" />
+    <End Role="CIRURGIA" Type="LOJA_PETModel.Store.CIRURGIA" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="PROPRIETARIOS">
+        <PropertyRef Name="ID_PROPRIETARIO" />
+      </Principal>
+      <Dependent Role="CIRURGIA">
+        <PropertyRef Name="ID_CLIENTE" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_EMPRESACIRURGIA">
+    <End Role="EMPRESA" Type="LOJA_PETModel.Store.EMPRESA" Multiplicity="1" />
+    <End Role="CIRURGIA" Type="LOJA_PETModel.Store.CIRURGIA" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="EMPRESA">
+        <PropertyRef Name="ID_EMPRESA" />
+      </Principal>
+      <Dependent Role="CIRURGIA">
+        <PropertyRef Name="ID_EMPRESA" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_PETCIRURGIA">
+    <End Role="PETS" Type="LOJA_PETModel.Store.PETS" Multiplicity="1" />
+    <End Role="CIRURGIA" Type="LOJA_PETModel.Store.CIRURGIA" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="PETS">
+        <PropertyRef Name="ID_PET" />
+      </Principal>
+      <Dependent Role="CIRURGIA">
+        <PropertyRef Name="ID_PET" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_RECEITACIRURGIA">
+    <End Role="CIRURGIA" Type="LOJA_PETModel.Store.CIRURGIA" Multiplicity="0..1" />
+    <End Role="RECEITA" Type="LOJA_PETModel.Store.RECEITA" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="CIRURGIA">
+        <PropertyRef Name="ID_CIRURGIA" />
+      </Principal>
+      <Dependent Role="RECEITA">
+        <PropertyRef Name="ID_CIRURGIA" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_VeterinariosCIRURGIA">
+    <End Role="Veterinarios" Type="LOJA_PETModel.Store.Veterinarios" Multiplicity="1" />
+    <End Role="CIRURGIA" Type="LOJA_PETModel.Store.CIRURGIA" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Veterinarios">
+        <PropertyRef Name="ID_VET" />
+      </Principal>
+      <Dependent Role="CIRURGIA">
+        <PropertyRef Name="ID_VET_PRINCIPAL" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_EMPRESACONFIG">
+    <End Role="CONFIG" Type="LOJA_PETModel.Store.CONFIG" Multiplicity="1" />
+    <End Role="EMPRESA" Type="LOJA_PETModel.Store.EMPRESA" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="CONFIG">
+        <PropertyRef Name="ID_CONFIG" />
+      </Principal>
+      <Dependent Role="EMPRESA">
+        <PropertyRef Name="ID_CONFIG" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_EMAILEMPRESA_EMAIL">
+    <End Role="EMAIL" Type="LOJA_PETModel.Store.EMAIL" Multiplicity="1" />
+    <End Role="EMPRESA_EMAIL" Type="LOJA_PETModel.Store.EMPRESA_EMAIL" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="EMAIL">
+        <PropertyRef Name="ID_EMAIL" />
+      </Principal>
+      <Dependent Role="EMPRESA_EMAIL">
+        <PropertyRef Name="ID_EMAIL" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_EMPRESA_EMAIL1">
+    <End Role="EMPRESA" Type="LOJA_PETModel.Store.EMPRESA" Multiplicity="1" />
+    <End Role="EMPRESA_EMAIL" Type="LOJA_PETModel.Store.EMPRESA_EMAIL" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="EMPRESA">
+        <PropertyRef Name="ID_EMPRESA" />
+      </Principal>
+      <Dependent Role="EMPRESA_EMAIL">
+        <PropertyRef Name="ID_EMPRESA" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_EMPRESAEMPRESA_USUARIO">
+    <End Role="EMPRESA" Type="LOJA_PETModel.Store.EMPRESA" Multiplicity="1" />
+    <End Role="EMPRESA_USUARIO" Type="LOJA_PETModel.Store.EMPRESA_USUARIO" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="EMPRESA">
+        <PropertyRef Name="ID_EMPRESA" />
+      </Principal>
+      <Dependent Role="EMPRESA_USUARIO">
+        <PropertyRef Name="ID_EMPRESA" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_EMPRESAEMPRESA_VETERINARIO">
+    <End Role="EMPRESA" Type="LOJA_PETModel.Store.EMPRESA" Multiplicity="1" />
+    <End Role="EMPRESA_VETERINARIO" Type="LOJA_PETModel.Store.EMPRESA_VETERINARIO" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="EMPRESA">
+        <PropertyRef Name="ID_EMPRESA" />
+      </Principal>
+      <Dependent Role="EMPRESA_VETERINARIO">
+        <PropertyRef Name="ID_EMPRESA" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_EMPRESAINTERNACAO">
+    <End Role="EMPRESA" Type="LOJA_PETModel.Store.EMPRESA" Multiplicity="1" />
+    <End Role="INTERNACAO" Type="LOJA_PETModel.Store.INTERNACAO" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="EMPRESA">
+        <PropertyRef Name="ID_EMPRESA" />
+      </Principal>
+      <Dependent Role="INTERNACAO">
+        <PropertyRef Name="ID_EMPRESA" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_USUARIOSEMPRESA_USUARIO">
+    <End Role="USUARIOS" Type="LOJA_PETModel.Store.USUARIOS" Multiplicity="1" />
+    <End Role="EMPRESA_USUARIO" Type="LOJA_PETModel.Store.EMPRESA_USUARIO" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="USUARIOS">
+        <PropertyRef Name="Id_USUARIO" />
+      </Principal>
+      <Dependent Role="EMPRESA_USUARIO">
+        <PropertyRef Name="ID_USUARIO" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_VeterinariosEMPRESA_VETERINARIO">
+    <End Role="Veterinarios" Type="LOJA_PETModel.Store.Veterinarios" Multiplicity="1" />
+    <End Role="EMPRESA_VETERINARIO" Type="LOJA_PETModel.Store.EMPRESA_VETERINARIO" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Veterinarios">
+        <PropertyRef Name="ID_VET" />
+      </Principal>
+      <Dependent Role="EMPRESA_VETERINARIO">
+        <PropertyRef Name="ID_VET" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_ClienteINTERNACAO">
+    <End Role="PROPRIETARIOS" Type="LOJA_PETModel.Store.PROPRIETARIOS" Multiplicity="1" />
+    <End Role="INTERNACAO" Type="LOJA_PETModel.Store.INTERNACAO" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="PROPRIETARIOS">
+        <PropertyRef Name="ID_PROPRIETARIO" />
+      </Principal>
+      <Dependent Role="INTERNACAO">
+        <PropertyRef Name="ID_CLIENTE" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_INTERNACAORECEITA">
+    <End Role="INTERNACAO" Type="LOJA_PETModel.Store.INTERNACAO" Multiplicity="0..1" />
+    <End Role="RECEITA" Type="LOJA_PETModel.Store.RECEITA" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="INTERNACAO">
+        <PropertyRef Name="ID_INTERNACAO" />
+      </Principal>
+      <Dependent Role="RECEITA">
+        <PropertyRef Name="ID_INTERNACAO" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_INTERNACAOSERVICO_VETERINARIO">
+    <End Role="INTERNACAO" Type="LOJA_PETModel.Store.INTERNACAO" Multiplicity="0..1" />
+    <End Role="SERVICO_VETERINARIO" Type="LOJA_PETModel.Store.SERVICO_VETERINARIO" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="INTERNACAO">
+        <PropertyRef Name="ID_INTERNACAO" />
+      </Principal>
+      <Dependent Role="SERVICO_VETERINARIO">
+        <PropertyRef Name="ID_INTERNACAO" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_INTERNACAOTOTAL_INTERNACAO">
+    <End Role="INTERNACAO" Type="LOJA_PETModel.Store.INTERNACAO" Multiplicity="0..1" />
+    <End Role="TOTAL_INTERNACAO_CIRURGIA" Type="LOJA_PETModel.Store.TOTAL_INTERNACAO_CIRURGIA" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="INTERNACAO">
+        <PropertyRef Name="ID_INTERNACAO" />
+      </Principal>
+      <Dependent Role="TOTAL_INTERNACAO_CIRURGIA">
+        <PropertyRef Name="ID_INTERNACAO" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_PETINTERNACAO">
+    <End Role="PETS" Type="LOJA_PETModel.Store.PETS" Multiplicity="1" />
+    <End Role="INTERNACAO" Type="LOJA_PETModel.Store.INTERNACAO" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="PETS">
+        <PropertyRef Name="ID_PET" />
+      </Principal>
+      <Dependent Role="INTERNACAO">
+        <PropertyRef Name="ID_PET" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_VeterinariosINTERNACAO">
+    <End Role="Veterinarios" Type="LOJA_PETModel.Store.Veterinarios" Multiplicity="1" />
+    <End Role="INTERNACAO" Type="LOJA_PETModel.Store.INTERNACAO" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Veterinarios">
+        <PropertyRef Name="ID_VET" />
+      </Principal>
+      <Dependent Role="INTERNACAO">
+        <PropertyRef Name="ID_VET" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_PAGAMENTOSPAGAMENTOS_ATENDIMENTO">
+    <End Role="PAGAMENTOS" Type="LOJA_PETModel.Store.PAGAMENTOS" Multiplicity="1" />
+    <End Role="PAGAMENTOS_ATENDIMENTOS" Type="LOJA_PETModel.Store.PAGAMENTOS_ATENDIMENTOS" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="PAGAMENTOS">
+        <PropertyRef Name="ID_PAGAMENTOS" />
+      </Principal>
+      <Dependent Role="PAGAMENTOS_ATENDIMENTOS">
+        <PropertyRef Name="ID_PAGAMENTO" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_PAGAMENTOSPAGAMENTOS_INTERNACAO">
+    <End Role="PAGAMENTOS" Type="LOJA_PETModel.Store.PAGAMENTOS" Multiplicity="1" />
+    <End Role="PAGAMENTOS_INTERNACAO" Type="LOJA_PETModel.Store.PAGAMENTOS_INTERNACAO" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="PAGAMENTOS">
+        <PropertyRef Name="ID_PAGAMENTOS" />
+      </Principal>
+      <Dependent Role="PAGAMENTOS_INTERNACAO">
+        <PropertyRef Name="ID_PAGAMENTO" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_TOTAL_ATENDIMENTOPAGAMENTOS_ATENDIMENTO">
+    <End Role="TOTAL_ATENDIMENTO" Type="LOJA_PETModel.Store.TOTAL_ATENDIMENTO" Multiplicity="1" />
+    <End Role="PAGAMENTOS_ATENDIMENTOS" Type="LOJA_PETModel.Store.PAGAMENTOS_ATENDIMENTOS" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="TOTAL_ATENDIMENTO">
+        <PropertyRef Name="ID_ASSOCIACAO" />
+      </Principal>
+      <Dependent Role="PAGAMENTOS_ATENDIMENTOS">
+        <PropertyRef Name="ID_TIPO_ATENDIMENTO" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_TOTAL_ATENDIMENTOPAGAMENTOS_ATENDIMENTO1">
+    <End Role="TOTAL_INTERNACAO_CIRURGIA" Type="LOJA_PETModel.Store.TOTAL_INTERNACAO_CIRURGIA" Multiplicity="1" />
+    <End Role="PAGAMENTOS_INTERNACAO" Type="LOJA_PETModel.Store.PAGAMENTOS_INTERNACAO" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="TOTAL_INTERNACAO_CIRURGIA">
+        <PropertyRef Name="ID_ASSOCIACAO" />
+      </Principal>
+      <Dependent Role="PAGAMENTOS_INTERNACAO">
+        <PropertyRef Name="ID_TIPO_ATENDIMENTO" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_PERFILUSUARIOS">
+    <End Role="PERFIL" Type="LOJA_PETModel.Store.PERFIL" Multiplicity="1" />
+    <End Role="USUARIOS" Type="LOJA_PETModel.Store.USUARIOS" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="PERFIL">
+        <PropertyRef Name="ID_PERFIL" />
+      </Principal>
+      <Dependent Role="USUARIOS">
+        <PropertyRef Name="ID_PERFIL" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_PETCliente">
+    <End Role="PROPRIETARIOS" Type="LOJA_PETModel.Store.PROPRIETARIOS" Multiplicity="1" />
+    <End Role="PETS" Type="LOJA_PETModel.Store.PETS" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="PROPRIETARIOS">
+        <PropertyRef Name="ID_PROPRIETARIO" />
+      </Principal>
+      <Dependent Role="PETS">
+        <PropertyRef Name="COD_CLIENTE" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_SERVICOSERVICO_VETERINARIO">
+    <End Role="SERVICO" Type="LOJA_PETModel.Store.SERVICO" Multiplicity="1" />
+    <End Role="SERVICO_VETERINARIO" Type="LOJA_PETModel.Store.SERVICO_VETERINARIO" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="SERVICO">
+        <PropertyRef Name="ID_SERVICO" />
+      </Principal>
+      <Dependent Role="SERVICO_VETERINARIO">
+        <PropertyRef Name="ID_SERVICO" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_VeterinariosSERVICO_VETERINARIO">
+    <End Role="Veterinarios" Type="LOJA_PETModel.Store.Veterinarios" Multiplicity="1" />
+    <End Role="SERVICO_VETERINARIO" Type="LOJA_PETModel.Store.SERVICO_VETERINARIO" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Veterinarios">
+        <PropertyRef Name="ID_VET" />
+      </Principal>
+      <Dependent Role="SERVICO_VETERINARIO">
+        <PropertyRef Name="ID_VET" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_VeterinariosVET_CIRURGIA">
+    <End Role="Veterinarios" Type="LOJA_PETModel.Store.Veterinarios" Multiplicity="1" />
+    <End Role="VET_CIRURGIA" Type="LOJA_PETModel.Store.VET_CIRURGIA" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Veterinarios">
+        <PropertyRef Name="ID_VET" />
+      </Principal>
+      <Dependent Role="VET_CIRURGIA">
+        <PropertyRef Name="ID_VET" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="TAXASPAGAMENTOS">
+    <End Role="TAXAS" Type="LOJA_PETModel.Store.TAXAS" Multiplicity="1" />
+    <End Role="PAGAMENTOS" Type="LOJA_PETModel.Store.PAGAMENTOS" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="TAXAS">
+        <PropertyRef Name="ID_TAXAS" />
+      </Principal>
+      <Dependent Role="PAGAMENTOS">
+        <PropertyRef Name="ID_TAXAS" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+</Schema></edmx:StorageModels>
+    <!-- CSDL content -->
+    <edmx:ConceptualModels>
+      <Schema Namespace="LOJA_PETModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+        <EntityContainer Name="LOJA_PETEntities" annotation:LazyLoadingEnabled="true" >
+          <FunctionImport Name="sp_alterdiagram">
+            <Parameter Name="diagramname" Mode="In" Type="String" />
+            <Parameter Name="owner_id" Mode="In" Type="Int32" />
+            <Parameter Name="version" Mode="In" Type="Int32" />
+            <Parameter Name="definition" Mode="In" Type="Binary" />
+          </FunctionImport>
+          <FunctionImport Name="sp_creatediagram">
+            <Parameter Name="diagramname" Mode="In" Type="String" />
+            <Parameter Name="owner_id" Mode="In" Type="Int32" />
+            <Parameter Name="version" Mode="In" Type="Int32" />
+            <Parameter Name="definition" Mode="In" Type="Binary" />
+          </FunctionImport>
+          <FunctionImport Name="sp_dropdiagram">
+            <Parameter Name="diagramname" Mode="In" Type="String" />
+            <Parameter Name="owner_id" Mode="In" Type="Int32" />
+          </FunctionImport>
+          <FunctionImport Name="sp_helpdiagramdefinition" ReturnType="Collection(LOJA_PETModel.sp_helpdiagramdefinition_Result)">
+            <Parameter Name="diagramname" Mode="In" Type="String" />
+            <Parameter Name="owner_id" Mode="In" Type="Int32" />
+          </FunctionImport>
+          <FunctionImport Name="sp_helpdiagrams" ReturnType="Collection(LOJA_PETModel.sp_helpdiagrams_Result)">
+            <Parameter Name="diagramname" Mode="In" Type="String" />
+            <Parameter Name="owner_id" Mode="In" Type="Int32" />
+          </FunctionImport>
+          <FunctionImport Name="sp_renamediagram">
+            <Parameter Name="diagramname" Mode="In" Type="String" />
+            <Parameter Name="owner_id" Mode="In" Type="Int32" />
+            <Parameter Name="new_diagramname" Mode="In" Type="String" />
+          </FunctionImport>
+          <FunctionImport Name="sp_upgraddiagrams" />
+          <EntitySet Name="ATENDIMENTO_VET" EntityType="LOJA_PETModel.ATENDIMENTO_VET" />
+          <EntitySet Name="CEP" EntityType="LOJA_PETModel.CEP" />
+          <EntitySet Name="CFOP" EntityType="LOJA_PETModel.CFOP" />
+          <EntitySet Name="CIRURGIA" EntityType="LOJA_PETModel.CIRURGIA" />
+          <EntitySet Name="CLIENTES" EntityType="LOJA_PETModel.CLIENTE" />
+          <EntitySet Name="Compromissos" EntityType="LOJA_PETModel.Compromissos" />
+          <EntitySet Name="CONFIG" EntityType="LOJA_PETModel.CONFIG" />
+          <EntitySet Name="EMAIL" EntityType="LOJA_PETModel.EMAIL" />
+          <EntitySet Name="EMPRESA" EntityType="LOJA_PETModel.EMPRESA" />
+          <EntitySet Name="EMPRESA_EMAIL" EntityType="LOJA_PETModel.EMPRESA_EMAIL" />
+          <EntitySet Name="EMPRESA_USUARIO" EntityType="LOJA_PETModel.EMPRESA_USUARIO" />
+          <EntitySet Name="EMPRESA_VETERINARIO" EntityType="LOJA_PETModel.EMPRESA_VETERINARIO" />
+          <EntitySet Name="GRP" EntityType="LOJA_PETModel.GRP" />
+          <EntitySet Name="INTERNACAO" EntityType="LOJA_PETModel.INTERNACAO" />
+          <EntitySet Name="PAGAMENTOS" EntityType="LOJA_PETModel.PAGAMENTOS" />
+          <EntitySet Name="PAGAMENTOS_ATENDIMENTOS" EntityType="LOJA_PETModel.PAGAMENTOS_ATENDIMENTOS" />
+          <EntitySet Name="PAGAMENTOS_INTERNACAO" EntityType="LOJA_PETModel.PAGAMENTOS_INTERNACAO" />
+          <EntitySet Name="PERFIL" EntityType="LOJA_PETModel.PERFIL" />
+          <EntitySet Name="PETS" EntityType="LOJA_PETModel.PET" />
+          <EntitySet Name="PROPRIETARIOS" EntityType="LOJA_PETModel.PROPRIETARIO" />
+          <EntitySet Name="RECEITA" EntityType="LOJA_PETModel.RECEITA" />
+          <EntitySet Name="SERVICO" EntityType="LOJA_PETModel.SERVICO" />
+          <EntitySet Name="SERVICO_VETERINARIO" EntityType="LOJA_PETModel.SERVICO_VETERINARIO" />
+          <EntitySet Name="TOTAL_ATENDIMENTO" EntityType="LOJA_PETModel.TOTAL_ATENDIMENTO" />
+          <EntitySet Name="TOTAL_INTERNACAO_CIRURGIA" EntityType="LOJA_PETModel.TOTAL_INTERNACAO_CIRURGIA" />
+          <EntitySet Name="Tributacao" EntityType="LOJA_PETModel.Tributacao" />
+          <EntitySet Name="USUARIOS" EntityType="LOJA_PETModel.USUARIOS" />
+          <EntitySet Name="VET_CIRURGIA" EntityType="LOJA_PETModel.VET_CIRURGIA" />
+          <EntitySet Name="Veterinarios" EntityType="LOJA_PETModel.Veterinarios" />
+          <AssociationSet Name="FK_ATENDIMENTO_VETINTERNACAO" Association="LOJA_PETModel.FK_ATENDIMENTO_VETINTERNACAO">
+            <End Role="ATENDIMENTO_VET" EntitySet="ATENDIMENTO_VET" />
+            <End Role="INTERNACAO" EntitySet="INTERNACAO" />
+          </AssociationSet>
+          <AssociationSet Name="FK_ATENDIMENTO_VETRECEITA" Association="LOJA_PETModel.FK_ATENDIMENTO_VETRECEITA">
+            <End Role="ATENDIMENTO_VET" EntitySet="ATENDIMENTO_VET" />
+            <End Role="RECEITA" EntitySet="RECEITA" />
+          </AssociationSet>
+          <AssociationSet Name="FK_ATENDIMENTO_VETSERVICO_VETERINARIO" Association="LOJA_PETModel.FK_ATENDIMENTO_VETSERVICO_VETERINARIO">
+            <End Role="ATENDIMENTO_VET" EntitySet="ATENDIMENTO_VET" />
+            <End Role="SERVICO_VETERINARIO" EntitySet="SERVICO_VETERINARIO" />
+          </AssociationSet>
+          <AssociationSet Name="FK_ATENDIMENTO_VETTOTAL_ATENDIMENTO" Association="LOJA_PETModel.FK_ATENDIMENTO_VETTOTAL_ATENDIMENTO">
+            <End Role="ATENDIMENTO_VET" EntitySet="ATENDIMENTO_VET" />
+            <End Role="TOTAL_ATENDIMENTO" EntitySet="TOTAL_ATENDIMENTO" />
+          </AssociationSet>
+          <AssociationSet Name="FK_CIRURGIAATENDIMENTO_VET" Association="LOJA_PETModel.FK_CIRURGIAATENDIMENTO_VET">
+            <End Role="CIRURGIA" EntitySet="CIRURGIA" />
+            <End Role="ATENDIMENTO_VET" EntitySet="ATENDIMENTO_VET" />
+          </AssociationSet>
+          <AssociationSet Name="FK_ClienteATENDIMENTO_VET" Association="LOJA_PETModel.FK_ClienteATENDIMENTO_VET">
+            <End Role="PROPRIETARIOS" EntitySet="PROPRIETARIOS" />
+            <End Role="ATENDIMENTO_VET" EntitySet="ATENDIMENTO_VET" />
+          </AssociationSet>
+          <AssociationSet Name="FK_EMPRESAATENDIMENTO_VET" Association="LOJA_PETModel.FK_EMPRESAATENDIMENTO_VET">
+            <End Role="EMPRESA" EntitySet="EMPRESA" />
+            <End Role="ATENDIMENTO_VET" EntitySet="ATENDIMENTO_VET" />
+          </AssociationSet>
+          <AssociationSet Name="FK_PETATENDIMENTO_VET" Association="LOJA_PETModel.FK_PETATENDIMENTO_VET">
+            <End Role="PETS" EntitySet="PETS" />
+            <End Role="ATENDIMENTO_VET" EntitySet="ATENDIMENTO_VET" />
+          </AssociationSet>
+          <AssociationSet Name="FK_VeterinariosATENDIMENTO_VET" Association="LOJA_PETModel.FK_VeterinariosATENDIMENTO_VET">
+            <End Role="Veterinarios" EntitySet="Veterinarios" />
+            <End Role="ATENDIMENTO_VET" EntitySet="ATENDIMENTO_VET" />
+          </AssociationSet>
+          <AssociationSet Name="FK_CIRURGIAINTERNACAO" Association="LOJA_PETModel.FK_CIRURGIAINTERNACAO">
+            <End Role="CIRURGIA" EntitySet="CIRURGIA" />
+            <End Role="INTERNACAO" EntitySet="INTERNACAO" />
+          </AssociationSet>
+          <AssociationSet Name="FK_CIRURGIATOTAL_INTERNACAO_CIRURGIA" Association="LOJA_PETModel.FK_CIRURGIATOTAL_INTERNACAO_CIRURGIA">
+            <End Role="CIRURGIA" EntitySet="CIRURGIA" />
+            <End Role="TOTAL_INTERNACAO_CIRURGIA" EntitySet="TOTAL_INTERNACAO_CIRURGIA" />
+          </AssociationSet>
+          <AssociationSet Name="FK_CIRURGIATOTAL_INTERNACAO_CIRURGIA1" Association="LOJA_PETModel.FK_CIRURGIATOTAL_INTERNACAO_CIRURGIA1">
+            <End Role="CIRURGIA" EntitySet="CIRURGIA" />
+            <End Role="TOTAL_INTERNACAO_CIRURGIA" EntitySet="TOTAL_INTERNACAO_CIRURGIA" />
+          </AssociationSet>
+          <AssociationSet Name="FK_CIRURGIAVET_CIRURGIA" Association="LOJA_PETModel.FK_CIRURGIAVET_CIRURGIA">
+            <End Role="CIRURGIA" EntitySet="CIRURGIA" />
+            <End Role="VET_CIRURGIA" EntitySet="VET_CIRURGIA" />
+          </AssociationSet>
+          <AssociationSet Name="FK_ClienteCIRURGIA" Association="LOJA_PETModel.FK_ClienteCIRURGIA">
+            <End Role="PROPRIETARIOS" EntitySet="PROPRIETARIOS" />
+            <End Role="CIRURGIA" EntitySet="CIRURGIA" />
+          </AssociationSet>
+          <AssociationSet Name="FK_EMPRESACIRURGIA" Association="LOJA_PETModel.FK_EMPRESACIRURGIA">
+            <End Role="EMPRESA" EntitySet="EMPRESA" />
+            <End Role="CIRURGIA" EntitySet="CIRURGIA" />
+          </AssociationSet>
+          <AssociationSet Name="FK_PETCIRURGIA" Association="LOJA_PETModel.FK_PETCIRURGIA">
+            <End Role="PETS" EntitySet="PETS" />
+            <End Role="CIRURGIA" EntitySet="CIRURGIA" />
+          </AssociationSet>
+          <AssociationSet Name="FK_RECEITACIRURGIA" Association="LOJA_PETModel.FK_RECEITACIRURGIA">
+            <End Role="CIRURGIA" EntitySet="CIRURGIA" />
+            <End Role="RECEITA" EntitySet="RECEITA" />
+          </AssociationSet>
+          <AssociationSet Name="FK_VeterinariosCIRURGIA" Association="LOJA_PETModel.FK_VeterinariosCIRURGIA">
+            <End Role="Veterinarios" EntitySet="Veterinarios" />
+            <End Role="CIRURGIA" EntitySet="CIRURGIA" />
+          </AssociationSet>
+          <AssociationSet Name="FK_EMPRESACONFIG" Association="LOJA_PETModel.FK_EMPRESACONFIG">
+            <End Role="CONFIG" EntitySet="CONFIG" />
+            <End Role="EMPRESA" EntitySet="EMPRESA" />
+          </AssociationSet>
+          <AssociationSet Name="FK_EMAILEMPRESA_EMAIL" Association="LOJA_PETModel.FK_EMAILEMPRESA_EMAIL">
+            <End Role="EMAIL" EntitySet="EMAIL" />
+            <End Role="EMPRESA_EMAIL" EntitySet="EMPRESA_EMAIL" />
+          </AssociationSet>
+          <AssociationSet Name="FK_EMPRESA_EMAIL1" Association="LOJA_PETModel.FK_EMPRESA_EMAIL1">
+            <End Role="EMPRESA" EntitySet="EMPRESA" />
+            <End Role="EMPRESA_EMAIL" EntitySet="EMPRESA_EMAIL" />
+          </AssociationSet>
+          <AssociationSet Name="FK_EMPRESAEMPRESA_USUARIO" Association="LOJA_PETModel.FK_EMPRESAEMPRESA_USUARIO">
+            <End Role="EMPRESA" EntitySet="EMPRESA" />
+            <End Role="EMPRESA_USUARIO" EntitySet="EMPRESA_USUARIO" />
+          </AssociationSet>
+          <AssociationSet Name="FK_EMPRESAEMPRESA_VETERINARIO" Association="LOJA_PETModel.FK_EMPRESAEMPRESA_VETERINARIO">
+            <End Role="EMPRESA" EntitySet="EMPRESA" />
+            <End Role="EMPRESA_VETERINARIO" EntitySet="EMPRESA_VETERINARIO" />
+          </AssociationSet>
+          <AssociationSet Name="FK_EMPRESAINTERNACAO" Association="LOJA_PETModel.FK_EMPRESAINTERNACAO">
+            <End Role="EMPRESA" EntitySet="EMPRESA" />
+            <End Role="INTERNACAO" EntitySet="INTERNACAO" />
+          </AssociationSet>
+          <AssociationSet Name="FK_USUARIOSEMPRESA_USUARIO" Association="LOJA_PETModel.FK_USUARIOSEMPRESA_USUARIO">
+            <End Role="USUARIOS" EntitySet="USUARIOS" />
+            <End Role="EMPRESA_USUARIO" EntitySet="EMPRESA_USUARIO" />
+          </AssociationSet>
+          <AssociationSet Name="FK_VeterinariosEMPRESA_VETERINARIO" Association="LOJA_PETModel.FK_VeterinariosEMPRESA_VETERINARIO">
+            <End Role="Veterinarios" EntitySet="Veterinarios" />
+            <End Role="EMPRESA_VETERINARIO" EntitySet="EMPRESA_VETERINARIO" />
+          </AssociationSet>
+          <AssociationSet Name="FK_ClienteINTERNACAO" Association="LOJA_PETModel.FK_ClienteINTERNACAO">
+            <End Role="PROPRIETARIOS" EntitySet="PROPRIETARIOS" />
+            <End Role="INTERNACAO" EntitySet="INTERNACAO" />
+          </AssociationSet>
+          <AssociationSet Name="FK_INTERNACAORECEITA" Association="LOJA_PETModel.FK_INTERNACAORECEITA">
+            <End Role="INTERNACAO" EntitySet="INTERNACAO" />
+            <End Role="RECEITA" EntitySet="RECEITA" />
+          </AssociationSet>
+          <AssociationSet Name="FK_INTERNACAOSERVICO_VETERINARIO" Association="LOJA_PETModel.FK_INTERNACAOSERVICO_VETERINARIO">
+            <End Role="INTERNACAO" EntitySet="INTERNACAO" />
+            <End Role="SERVICO_VETERINARIO" EntitySet="SERVICO_VETERINARIO" />
+          </AssociationSet>
+          <AssociationSet Name="FK_INTERNACAOTOTAL_INTERNACAO" Association="LOJA_PETModel.FK_INTERNACAOTOTAL_INTERNACAO">
+            <End Role="INTERNACAO" EntitySet="INTERNACAO" />
+            <End Role="TOTAL_INTERNACAO_CIRURGIA" EntitySet="TOTAL_INTERNACAO_CIRURGIA" />
+          </AssociationSet>
+          <AssociationSet Name="FK_PETINTERNACAO" Association="LOJA_PETModel.FK_PETINTERNACAO">
+            <End Role="PETS" EntitySet="PETS" />
+            <End Role="INTERNACAO" EntitySet="INTERNACAO" />
+          </AssociationSet>
+          <AssociationSet Name="FK_VeterinariosINTERNACAO" Association="LOJA_PETModel.FK_VeterinariosINTERNACAO">
+            <End Role="Veterinarios" EntitySet="Veterinarios" />
+            <End Role="INTERNACAO" EntitySet="INTERNACAO" />
+          </AssociationSet>
+          <AssociationSet Name="FK_PAGAMENTOSPAGAMENTOS_ATENDIMENTO" Association="LOJA_PETModel.FK_PAGAMENTOSPAGAMENTOS_ATENDIMENTO">
+            <End Role="PAGAMENTOS" EntitySet="PAGAMENTOS" />
+            <End Role="PAGAMENTOS_ATENDIMENTOS" EntitySet="PAGAMENTOS_ATENDIMENTOS" />
+          </AssociationSet>
+          <AssociationSet Name="FK_PAGAMENTOSPAGAMENTOS_INTERNACAO" Association="LOJA_PETModel.FK_PAGAMENTOSPAGAMENTOS_INTERNACAO">
+            <End Role="PAGAMENTOS" EntitySet="PAGAMENTOS" />
+            <End Role="PAGAMENTOS_INTERNACAO" EntitySet="PAGAMENTOS_INTERNACAO" />
+          </AssociationSet>
+          <AssociationSet Name="FK_TOTAL_ATENDIMENTOPAGAMENTOS_ATENDIMENTO" Association="LOJA_PETModel.FK_TOTAL_ATENDIMENTOPAGAMENTOS_ATENDIMENTO">
+            <End Role="TOTAL_ATENDIMENTO" EntitySet="TOTAL_ATENDIMENTO" />
+            <End Role="PAGAMENTOS_ATENDIMENTOS" EntitySet="PAGAMENTOS_ATENDIMENTOS" />
+          </AssociationSet>
+          <AssociationSet Name="FK_TOTAL_ATENDIMENTOPAGAMENTOS_ATENDIMENTO1" Association="LOJA_PETModel.FK_TOTAL_ATENDIMENTOPAGAMENTOS_ATENDIMENTO1">
+            <End Role="TOTAL_INTERNACAO_CIRURGIA" EntitySet="TOTAL_INTERNACAO_CIRURGIA" />
+            <End Role="PAGAMENTOS_INTERNACAO" EntitySet="PAGAMENTOS_INTERNACAO" />
+          </AssociationSet>
+          <AssociationSet Name="FK_PERFILUSUARIOS" Association="LOJA_PETModel.FK_PERFILUSUARIOS">
+            <End Role="PERFIL" EntitySet="PERFIL" />
+            <End Role="USUARIOS" EntitySet="USUARIOS" />
+          </AssociationSet>
+          <AssociationSet Name="FK_PETCliente" Association="LOJA_PETModel.FK_PETCliente">
+            <End Role="PROPRIETARIOS" EntitySet="PROPRIETARIOS" />
+            <End Role="PETS" EntitySet="PETS" />
+          </AssociationSet>
+          <AssociationSet Name="FK_SERVICOSERVICO_VETERINARIO" Association="LOJA_PETModel.FK_SERVICOSERVICO_VETERINARIO">
+            <End Role="SERVICO" EntitySet="SERVICO" />
+            <End Role="SERVICO_VETERINARIO" EntitySet="SERVICO_VETERINARIO" />
+          </AssociationSet>
+          <AssociationSet Name="FK_VeterinariosSERVICO_VETERINARIO" Association="LOJA_PETModel.FK_VeterinariosSERVICO_VETERINARIO">
+            <End Role="Veterinarios" EntitySet="Veterinarios" />
+            <End Role="SERVICO_VETERINARIO" EntitySet="SERVICO_VETERINARIO" />
+          </AssociationSet>
+          <AssociationSet Name="FK_VeterinariosVET_CIRURGIA" Association="LOJA_PETModel.FK_VeterinariosVET_CIRURGIA">
+            <End Role="Veterinarios" EntitySet="Veterinarios" />
+            <End Role="VET_CIRURGIA" EntitySet="VET_CIRURGIA" />
+          </AssociationSet>
+          <EntitySet Name="TAXAS" EntityType="LOJA_PETModel.TAXAS" />
+          <AssociationSet Name="TAXASPAGAMENTOS" Association="LOJA_PETModel.TAXASPAGAMENTOS">
+            <End Role="TAXAS" EntitySet="TAXAS" />
+            <End Role="PAGAMENTOS" EntitySet="PAGAMENTOS" />
+          </AssociationSet>
+          <EntitySet Name="b_pessoas_empresa_pet" EntityType="LOJA_PETModel.b_pessoas_empresa_pet" />
+        </EntityContainer>
+        <ComplexType Name="sp_helpdiagramdefinition_Result">
+          <Property Type="Int32" Name="version" Nullable="true" />
+          <Property Type="Binary" Name="definition" Nullable="true" />
+        </ComplexType>
+        <ComplexType Name="sp_helpdiagrams_Result">
+          <Property Type="String" Name="Database" Nullable="true" MaxLength="128" />
+          <Property Type="String" Name="Name" Nullable="false" MaxLength="128" />
+          <Property Type="Int32" Name="ID" Nullable="false" />
+          <Property Type="String" Name="Owner" Nullable="true" MaxLength="128" />
+          <Property Type="Int32" Name="OwnerID" Nullable="false" />
+        </ComplexType>
+        <EntityType Name="ATENDIMENTO_VET">
+          <Key>
+            <PropertyRef Name="ID_ATENDIMENTO" />
+          </Key>
+          <Property Name="ID_ATENDIMENTO" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="ID_VET" Type="Int32" Nullable="false" />
+          <Property Name="ID_PET" Type="Int32" Nullable="false" />
+          <Property Name="ID_EMPRESA" Type="Int32" Nullable="false" />
+          <Property Name="ID_CLIENTE" Type="Int32" Nullable="false" />
+          <Property Name="SINTOMAS" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="REQUISICAO_EXAMES" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="PESO_PET" Type="Double" Nullable="false" />
+          <Property Name="ID_INTERNACAO" Type="Int32" />
+          <Property Name="ID_CIRURGIA" Type="Int32" />
+          <Property Name="TIPO_ATENDIMENTO" Type="Int32" Nullable="false" />
+          <NavigationProperty Name="INTERNACAO" Relationship="LOJA_PETModel.FK_ATENDIMENTO_VETINTERNACAO" FromRole="ATENDIMENTO_VET" ToRole="INTERNACAO" />
+          <NavigationProperty Name="RECEITA" Relationship="LOJA_PETModel.FK_ATENDIMENTO_VETRECEITA" FromRole="ATENDIMENTO_VET" ToRole="RECEITA" />
+          <NavigationProperty Name="SERVICO_VETERINARIO" Relationship="LOJA_PETModel.FK_ATENDIMENTO_VETSERVICO_VETERINARIO" FromRole="ATENDIMENTO_VET" ToRole="SERVICO_VETERINARIO" />
+          <NavigationProperty Name="TOTAL_ATENDIMENTO" Relationship="LOJA_PETModel.FK_ATENDIMENTO_VETTOTAL_ATENDIMENTO" FromRole="ATENDIMENTO_VET" ToRole="TOTAL_ATENDIMENTO" />
+          <NavigationProperty Name="CIRURGIA" Relationship="LOJA_PETModel.FK_CIRURGIAATENDIMENTO_VET" FromRole="ATENDIMENTO_VET" ToRole="CIRURGIA" />
+          <NavigationProperty Name="PROPRIETARIOS" Relationship="LOJA_PETModel.FK_ClienteATENDIMENTO_VET" FromRole="ATENDIMENTO_VET" ToRole="PROPRIETARIOS" />
+          <NavigationProperty Name="EMPRESA" Relationship="LOJA_PETModel.FK_EMPRESAATENDIMENTO_VET" FromRole="ATENDIMENTO_VET" ToRole="EMPRESA" />
+          <NavigationProperty Name="PETS" Relationship="LOJA_PETModel.FK_PETATENDIMENTO_VET" FromRole="ATENDIMENTO_VET" ToRole="PETS" />
+          <NavigationProperty Name="Veterinarios" Relationship="LOJA_PETModel.FK_VeterinariosATENDIMENTO_VET" FromRole="ATENDIMENTO_VET" ToRole="Veterinarios" />
+          <Property Name="TAXASID_TAXAS" Type="Int32" Nullable="false" />
+        </EntityType>
+        <EntityType Name="CEP">
+          <Key>
+            <PropertyRef Name="ID_CEP" />
+          </Key>
+          <Property Name="ID_CEP" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="NUM_CEP" Type="String" Nullable="false" MaxLength="10" FixedLength="false" Unicode="false" />
+          <Property Name="ENDERECO" Type="String" MaxLength="40" FixedLength="false" Unicode="true" />
+          <Property Name="COMPLEMENTO" Type="String" MaxLength="40" FixedLength="false" Unicode="true" />
+          <Property Name="BAIRRO" Type="String" Nullable="false" MaxLength="40" FixedLength="false" Unicode="false" />
+          <Property Name="CIDADE" Type="String" Nullable="false" MaxLength="40" FixedLength="false" Unicode="false" />
+          <Property Name="ESTADO" Type="String" Nullable="false" MaxLength="20" FixedLength="false" Unicode="false" />
+          <Property Name="PAIS" Type="String" MaxLength="40" FixedLength="false" Unicode="true" />
+          <Property Name="IBGE" Type="String" MaxLength="25" FixedLength="false" Unicode="true" />
+          <Property Name="COD_CEP" Type="Int32" Nullable="false" />
+        </EntityType>
+        <EntityType Name="CFOP">
+          <Key>
+            <PropertyRef Name="ID_CFOP" />
+          </Key>
+          <Property Name="ID_CFOP" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="CFOP1" Type="String" Nullable="false" MaxLength="5" FixedLength="false" Unicode="false" />
+          <Property Name="Descricao" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="MOV_ESTQ" Type="String" Nullable="false" MaxLength="1" FixedLength="true" Unicode="false" />
+          <Property Name="ATUALIZA_CUSTO" Type="String" Nullable="false" MaxLength="1" FixedLength="true" Unicode="false" />
+          <Property Name="TIPO_MOV" Type="String" Nullable="false" MaxLength="1" FixedLength="true" Unicode="false" />
+          <Property Name="ATIVO" Type="String" Nullable="false" MaxLength="1" FixedLength="true" Unicode="false" />
+        </EntityType>
+        <EntityType Name="CIRURGIA">
+          <Key>
+            <PropertyRef Name="ID_CIRURGIA" />
+          </Key>
+          <Property Name="ID_CIRURGIA" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="ID_VET_PRINCIPAL" Type="Int32" Nullable="false" />
+          <Property Name="ID_PET" Type="Int32" Nullable="false" />
+          <Property Name="ID_EMPRESA" Type="Int32" Nullable="false" />
+          <Property Name="ID_CLIENTE" Type="Int32" Nullable="false" />
+          <Property Name="PESO_PET" Type="Double" Nullable="false" />
+          <NavigationProperty Name="ATENDIMENTO_VET" Relationship="LOJA_PETModel.FK_CIRURGIAATENDIMENTO_VET" FromRole="CIRURGIA" ToRole="ATENDIMENTO_VET" />
+          <NavigationProperty Name="INTERNACAO" Relationship="LOJA_PETModel.FK_CIRURGIAINTERNACAO" FromRole="CIRURGIA" ToRole="INTERNACAO" />
+          <NavigationProperty Name="TOTAL_INTERNACAO_CIRURGIA" Relationship="LOJA_PETModel.FK_CIRURGIATOTAL_INTERNACAO_CIRURGIA" FromRole="CIRURGIA" ToRole="TOTAL_INTERNACAO_CIRURGIA" />
+          <NavigationProperty Name="TOTAL_INTERNACAO_CIRURGIA1" Relationship="LOJA_PETModel.FK_CIRURGIATOTAL_INTERNACAO_CIRURGIA1" FromRole="CIRURGIA" ToRole="TOTAL_INTERNACAO_CIRURGIA" />
+          <NavigationProperty Name="VET_CIRURGIA" Relationship="LOJA_PETModel.FK_CIRURGIAVET_CIRURGIA" FromRole="CIRURGIA" ToRole="VET_CIRURGIA" />
+          <NavigationProperty Name="PROPRIETARIOS" Relationship="LOJA_PETModel.FK_ClienteCIRURGIA" FromRole="CIRURGIA" ToRole="PROPRIETARIOS" />
+          <NavigationProperty Name="EMPRESA" Relationship="LOJA_PETModel.FK_EMPRESACIRURGIA" FromRole="CIRURGIA" ToRole="EMPRESA" />
+          <NavigationProperty Name="PETS" Relationship="LOJA_PETModel.FK_PETCIRURGIA" FromRole="CIRURGIA" ToRole="PETS" />
+          <NavigationProperty Name="RECEITA" Relationship="LOJA_PETModel.FK_RECEITACIRURGIA" FromRole="CIRURGIA" ToRole="RECEITA" />
+          <NavigationProperty Name="Veterinarios" Relationship="LOJA_PETModel.FK_VeterinariosCIRURGIA" FromRole="CIRURGIA" ToRole="Veterinarios" />
+        </EntityType>
+        <EntityType Name="CLIENTE">
+          <Key>
+            <PropertyRef Name="COD_CLIENTE" />
+          </Key>
+          <Property Name="COD_CLIENTE" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="CPF" Type="String" MaxLength="14" FixedLength="false" Unicode="false" />
+          <Property Name="NOME" Type="String" Nullable="false" MaxLength="40" FixedLength="false" Unicode="false" />
+          <Property Name="TELEFONE" Type="String" MaxLength="11" FixedLength="false" Unicode="false" />
+          <Property Name="CELULAR" Type="String" MaxLength="11" FixedLength="false" Unicode="false" />
+          <Property Name="EMAIL" Type="String" MaxLength="40" FixedLength="false" Unicode="false" />
+          <Property Name="CEP" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+          <Property Name="RUA" Type="String" MaxLength="40" FixedLength="false" Unicode="false" />
+          <Property Name="NUMERO" Type="String" MaxLength="10" FixedLength="false" Unicode="false" />
+          <Property Name="BAIRRO" Type="String" MaxLength="40" FixedLength="false" Unicode="false" />
+          <Property Name="CIDADE" Type="String" MaxLength="40" FixedLength="false" Unicode="false" />
+          <Property Name="ESTADO" Type="String" MaxLength="10" FixedLength="false" Unicode="false" />
+          <Property Name="ATIVO" Type="String" MaxLength="1" FixedLength="true" Unicode="false" />
+        </EntityType>
+        <EntityType Name="Compromissos">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Data" Type="DateTime" Precision="3" />
+          <Property Name="Hora" Type="Time" Precision="7" />
+          <Property Name="Descricao" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+          <Property Name="USUARIO_CRIOU_COMP" Type="Int32" Nullable="false" />
+          <Property Name="USUARIO_P_COMP" Type="Int32" Nullable="true" />
+          <Property Name="Entidade_Registro" Type="String" Nullable="true" MaxLength="Max" Unicode="true" FixedLength="false" />
+          <Property Name="ID_REGISTRO" Type="Int32" Nullable="true" />
+          <Property Name="Concluido" Type="Boolean" />
+        </EntityType>
+        <EntityType Name="CONFIG">
+          <Key>
+            <PropertyRef Name="ID_CONFIG" />
+          </Key>
+          <Property Name="ID_CONFIG" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="AT_CHV" Type="Int16" Nullable="false" />
+          <Property Name="DT_INST" Type="DateTime" Nullable="false" Precision="3" />
+          <Property Name="DT_VAL" Type="DateTime" Nullable="false" Precision="3" />
+          <Property Name="MOV_ESTOQUE" Type="Boolean" Nullable="false" />
+          <Property Name="UT_BANHOETOSA" Type="Boolean" Nullable="false" />
+          <Property Name="UT_FIN" Type="Boolean" Nullable="false" />
+          <Property Name="UT_VENDA" Type="Boolean" Nullable="false" />
+          <Property Name="AT_ESTQ" Type="Boolean" Nullable="false" />
+          <Property Name="Val_CPF_CNPJ" Type="Boolean" Nullable="false" />
+          <Property Name="ATIVO" Type="Boolean" Nullable="false" />
+          <NavigationProperty Name="EMPRESA" Relationship="LOJA_PETModel.FK_EMPRESACONFIG" FromRole="CONFIG" ToRole="EMPRESA" />
+        </EntityType>
+        <EntityType Name="EMAIL">
+          <Key>
+            <PropertyRef Name="ID_EMAIL" />
+          </Key>
+          <Property Name="ID_EMAIL" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="END_EMAIL" Type="String" Nullable="false" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="SENHA" Type="String" Nullable="false" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="SMTP" Type="String" Nullable="false" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="PORTA" Type="String" Nullable="false" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="Req_AUT" Type="Boolean" Nullable="false" />
+          <Property Name="Req_SSL" Type="Boolean" Nullable="false" />
+          <NavigationProperty Name="EMPRESA_EMAIL" Relationship="LOJA_PETModel.FK_EMAILEMPRESA_EMAIL" FromRole="EMAIL" ToRole="EMPRESA_EMAIL" />
+        </EntityType>
+        <EntityType Name="EMPRESA">
+          <Key>
+            <PropertyRef Name="ID_EMPRESA" />
+          </Key>
+          <Property Name="ID_EMPRESA" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="RAZAO_SOCIAL" Type="String" Nullable="false" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="FANTASIA" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="CNPJ_CPF" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="IE_RG" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="CEP" Type="String" MaxLength="10" FixedLength="false" Unicode="true" />
+          <Property Name="ENDERECO" Type="String" MaxLength="40" FixedLength="false" Unicode="true" />
+          <Property Name="NUMERO" Type="String" MaxLength="10" FixedLength="false" Unicode="true" />
+          <Property Name="COMPLEMENTO" Type="String" MaxLength="40" FixedLength="false" Unicode="true" />
+          <Property Name="BAIRRO" Type="String" MaxLength="40" FixedLength="false" Unicode="true" />
+          <Property Name="CIDADE" Type="String" MaxLength="40" FixedLength="false" Unicode="true" />
+          <Property Name="ESTADO" Type="String" MaxLength="40" FixedLength="false" Unicode="true" />
+          <Property Name="PAIS" Type="String" MaxLength="40" FixedLength="false" Unicode="true" />
+          <Property Name="TELEFONE" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="CELULAR" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="EMAIL" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="CHV" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="ID_CONFIG" Type="Int32" Nullable="false" />
+          <Property Name="IMAGEM" Type="Binary" MaxLength="Max" FixedLength="false" Nullable="true" />
+          <Property Name="TIPO_EMPRESA" Type="Int32" Nullable="false" />
+          <Property Name="Tipo_juros" Type="String" MaxLength="1" Unicode="true" FixedLength="false" Nullable="true" />
+          <Property Name="Cobr_juros" Type="String" Nullable="true" MaxLength="1" Unicode="true" FixedLength="false" />
+          <Property Name="P_juros" Type="Decimal" Nullable="true" Precision="18" Scale="0" >
+            <Documentation>
+              <Summary>2</Summary>
+              <LongDescription>18</LongDescription>
+            </Documentation>
+          </Property>
+          <Property Name="P_MULTA" Type="Decimal" Nullable="true" Precision="18" Scale="0" >
+            <Documentation>
+              <Summary>2</Summary>
+              <LongDescription>18</LongDescription>
+            </Documentation>
+          </Property>
+          <Property Name="ATIVO" Type="Boolean" Nullable="false" />
+          <NavigationProperty Name="ATENDIMENTO_VET" Relationship="LOJA_PETModel.FK_EMPRESAATENDIMENTO_VET" FromRole="EMPRESA" ToRole="ATENDIMENTO_VET" />
+          <NavigationProperty Name="CIRURGIA" Relationship="LOJA_PETModel.FK_EMPRESACIRURGIA" FromRole="EMPRESA" ToRole="CIRURGIA" />
+          <NavigationProperty Name="CONFIG" Relationship="LOJA_PETModel.FK_EMPRESACONFIG" FromRole="EMPRESA" ToRole="CONFIG" />
+          <NavigationProperty Name="EMPRESA_EMAIL" Relationship="LOJA_PETModel.FK_EMPRESA_EMAIL1" FromRole="EMPRESA" ToRole="EMPRESA_EMAIL" />
+          <NavigationProperty Name="EMPRESA_USUARIO" Relationship="LOJA_PETModel.FK_EMPRESAEMPRESA_USUARIO" FromRole="EMPRESA" ToRole="EMPRESA_USUARIO" />
+          <NavigationProperty Name="EMPRESA_VETERINARIO" Relationship="LOJA_PETModel.FK_EMPRESAEMPRESA_VETERINARIO" FromRole="EMPRESA" ToRole="EMPRESA_VETERINARIO" />
+          <NavigationProperty Name="INTERNACAO" Relationship="LOJA_PETModel.FK_EMPRESAINTERNACAO" FromRole="EMPRESA" ToRole="INTERNACAO" />
+        </EntityType>
+        <EntityType Name="EMPRESA_EMAIL">
+          <Key>
+            <PropertyRef Name="ID_ASSOCIACAO" />
+          </Key>
+          <Property Name="ID_ASSOCIACAO" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="ID_EMPRESA" Type="Int32" Nullable="false" />
+          <Property Name="ID_EMAIL" Type="Int32" Nullable="false" />
+          <NavigationProperty Name="EMAIL" Relationship="LOJA_PETModel.FK_EMAILEMPRESA_EMAIL" FromRole="EMPRESA_EMAIL" ToRole="EMAIL" />
+          <NavigationProperty Name="EMPRESA" Relationship="LOJA_PETModel.FK_EMPRESA_EMAIL1" FromRole="EMPRESA_EMAIL" ToRole="EMPRESA" />
+        </EntityType>
+        <EntityType Name="EMPRESA_USUARIO">
+          <Key>
+            <PropertyRef Name="ID_ASSOCIACAO" />
+          </Key>
+          <Property Name="ID_EMPRESA" Type="Int32" Nullable="false" />
+          <Property Name="ID_USUARIO" Type="Int32" Nullable="false" />
+          <Property Name="ID_ASSOCIACAO" Type="Int32" Nullable="false" />
+          <NavigationProperty Name="EMPRESA" Relationship="LOJA_PETModel.FK_EMPRESAEMPRESA_USUARIO" FromRole="EMPRESA_USUARIO" ToRole="EMPRESA" />
+          <NavigationProperty Name="USUARIOS" Relationship="LOJA_PETModel.FK_USUARIOSEMPRESA_USUARIO" FromRole="EMPRESA_USUARIO" ToRole="USUARIOS" />
+        </EntityType>
+        <EntityType Name="EMPRESA_VETERINARIO">
+          <Key>
+            <PropertyRef Name="ID_ASSOCIACAO" />
+          </Key>
+          <Property Name="ID_ASSOCIACAO" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="ID_EMPRESA" Type="Int32" Nullable="false" />
+          <Property Name="ID_VET" Type="Int32" Nullable="false" />
+          <NavigationProperty Name="EMPRESA" Relationship="LOJA_PETModel.FK_EMPRESAEMPRESA_VETERINARIO" FromRole="EMPRESA_VETERINARIO" ToRole="EMPRESA" />
+          <NavigationProperty Name="Veterinarios" Relationship="LOJA_PETModel.FK_VeterinariosEMPRESA_VETERINARIO" FromRole="EMPRESA_VETERINARIO" ToRole="Veterinarios" />
+        </EntityType>
+        <EntityType Name="GRP">
+          <Key>
+            <PropertyRef Name="COD_GRP" />
+          </Key>
+          <Property Name="COD_GRP" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="nome_grupo" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="Prod_Vend" Type="String" Nullable="false" MaxLength="1" FixedLength="true" Unicode="false" />
+        </EntityType>
+        <EntityType Name="INTERNACAO">
+          <Key>
+            <PropertyRef Name="ID_INTERNACAO" />
+          </Key>
+          <Property Name="ID_INTERNACAO" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="ID_VET" Type="Int32" Nullable="false" />
+          <Property Name="ID_PET" Type="Int32" Nullable="false" />
+          <Property Name="ID_EMPRESA" Type="Int32" Nullable="false" />
+          <Property Name="ID_CLIENTE" Type="Int32" Nullable="false" />
+          <Property Name="PESO_PET" Type="Double" Nullable="false" />
+          <Property Name="ID_ATENDIMENTO" Type="Int32" />
+          <Property Name="ID_CIRURGIA" Type="Int32" />
+          <NavigationProperty Name="ATENDIMENTO_VET" Relationship="LOJA_PETModel.FK_ATENDIMENTO_VETINTERNACAO" FromRole="INTERNACAO" ToRole="ATENDIMENTO_VET" />
+          <NavigationProperty Name="CIRURGIA" Relationship="LOJA_PETModel.FK_CIRURGIAINTERNACAO" FromRole="INTERNACAO" ToRole="CIRURGIA" />
+          <NavigationProperty Name="EMPRESA" Relationship="LOJA_PETModel.FK_EMPRESAINTERNACAO" FromRole="INTERNACAO" ToRole="EMPRESA" />
+          <NavigationProperty Name="PROPRIETARIOS" Relationship="LOJA_PETModel.FK_ClienteINTERNACAO" FromRole="INTERNACAO" ToRole="PROPRIETARIOS" />
+          <NavigationProperty Name="RECEITA" Relationship="LOJA_PETModel.FK_INTERNACAORECEITA" FromRole="INTERNACAO" ToRole="RECEITA" />
+          <NavigationProperty Name="SERVICO_VETERINARIO" Relationship="LOJA_PETModel.FK_INTERNACAOSERVICO_VETERINARIO" FromRole="INTERNACAO" ToRole="SERVICO_VETERINARIO" />
+          <NavigationProperty Name="TOTAL_INTERNACAO_CIRURGIA" Relationship="LOJA_PETModel.FK_INTERNACAOTOTAL_INTERNACAO" FromRole="INTERNACAO" ToRole="TOTAL_INTERNACAO_CIRURGIA" />
+          <NavigationProperty Name="PETS" Relationship="LOJA_PETModel.FK_PETINTERNACAO" FromRole="INTERNACAO" ToRole="PETS" />
+          <NavigationProperty Name="Veterinarios" Relationship="LOJA_PETModel.FK_VeterinariosINTERNACAO" FromRole="INTERNACAO" ToRole="Veterinarios" />
+        </EntityType>
+        <EntityType Name="PAGAMENTOS">
+          <Key>
+            <PropertyRef Name="ID_PAGAMENTOS" />
+          </Key>
+          <Property Name="ID_PAGAMENTOS" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="NOME" Type="String" Nullable="false" MaxLength="20" FixedLength="false" Unicode="true" />
+          <Property Name="TIPO_PAG" Type="Int32" />
+          <Property Name="ID_TAXAS" Type="Int32" Nullable="false" />
+          <Property Name="Gera_Fin" Type="Boolean" Nullable="false" />
+          <Property Name="ATIVO" Type="Boolean" Nullable="false" />
+          <NavigationProperty Name="PAGAMENTOS_ATENDIMENTOS" Relationship="LOJA_PETModel.FK_PAGAMENTOSPAGAMENTOS_ATENDIMENTO" FromRole="PAGAMENTOS" ToRole="PAGAMENTOS_ATENDIMENTOS" />
+          <NavigationProperty Name="PAGAMENTOS_INTERNACAO" Relationship="LOJA_PETModel.FK_PAGAMENTOSPAGAMENTOS_INTERNACAO" FromRole="PAGAMENTOS" ToRole="PAGAMENTOS_INTERNACAO" />
+          <NavigationProperty Name="TAXAS" Relationship="LOJA_PETModel.TAXASPAGAMENTOS" FromRole="PAGAMENTOS" ToRole="TAXAS" />
+        </EntityType>
+        <EntityType Name="PAGAMENTOS_ATENDIMENTOS">
+          <Key>
+            <PropertyRef Name="ID_ASSOCIACAO" />
+          </Key>
+          <Property Name="ID_ASSOCIACAO" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="ID_PAGAMENTO" Type="Int32" Nullable="false" />
+          <Property Name="NOME_PAGAMENTO" Type="String" Nullable="false" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="VALOR_PAGAMENTO" Type="Decimal" Nullable="false" Precision="18" Scale="0" />
+          <Property Name="ID_TIPO_ATENDIMENTO" Type="Int32" Nullable="false" />
+          <Property Name="DIVIDO_VEZES" Type="Int32" />
+          <Property Name="DATA_FECHAMENTO" Type="DateTime" Nullable="false" Precision="3" />
+          <NavigationProperty Name="PAGAMENTOS" Relationship="LOJA_PETModel.FK_PAGAMENTOSPAGAMENTOS_ATENDIMENTO" FromRole="PAGAMENTOS_ATENDIMENTOS" ToRole="PAGAMENTOS" />
+          <NavigationProperty Name="TOTAL_ATENDIMENTO" Relationship="LOJA_PETModel.FK_TOTAL_ATENDIMENTOPAGAMENTOS_ATENDIMENTO" FromRole="PAGAMENTOS_ATENDIMENTOS" ToRole="TOTAL_ATENDIMENTO" />
+        </EntityType>
+        <EntityType Name="PAGAMENTOS_INTERNACAO">
+          <Key>
+            <PropertyRef Name="ID_ASSOCIACAO" />
+          </Key>
+          <Property Name="ID_ASSOCIACAO" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="ID_PAGAMENTO" Type="Int32" Nullable="false" />
+          <Property Name="NOME_PAGAMENTO" Type="String" Nullable="false" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="VALOR_PAGAMENTO" Type="Decimal" Nullable="false" Precision="18" Scale="2" />
+          <Property Name="ID_TIPO_ATENDIMENTO" Type="Int32" Nullable="false" />
+          <Property Name="DIVIDO_VEZES" Type="Int32" />
+          <Property Name="DATA_FECHAMENTO" Type="DateTime" Nullable="false" Precision="3" />
+          <NavigationProperty Name="PAGAMENTOS" Relationship="LOJA_PETModel.FK_PAGAMENTOSPAGAMENTOS_INTERNACAO" FromRole="PAGAMENTOS_INTERNACAO" ToRole="PAGAMENTOS" />
+          <NavigationProperty Name="TOTAL_INTERNACAO_CIRURGIA" Relationship="LOJA_PETModel.FK_TOTAL_ATENDIMENTOPAGAMENTOS_ATENDIMENTO1" FromRole="PAGAMENTOS_INTERNACAO" ToRole="TOTAL_INTERNACAO_CIRURGIA" />
+        </EntityType>
+        <EntityType Name="PERFIL">
+          <Key>
+            <PropertyRef Name="ID_PERFIL" />
+          </Key>
+          <Property Name="ID_PERFIL" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="DESCRICAO" Type="String" Nullable="false" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <NavigationProperty Name="USUARIOS" Relationship="LOJA_PETModel.FK_PERFILUSUARIOS" FromRole="PERFIL" ToRole="USUARIOS" />
+        </EntityType>
+        <EntityType Name="PET">
+          <Key>
+            <PropertyRef Name="ID_PET" />
+          </Key>
+          <Property Name="ID_PET" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="NOME_PET" Type="String" Nullable="false" MaxLength="40" FixedLength="false" Unicode="true" />
+          <Property Name="COD_CLIENTE" Type="Int32" Nullable="false" />
+          <Property Name="RACA_PET" Type="String" Nullable="false" MaxLength="20" FixedLength="false" Unicode="true" />
+          <Property Name="SEXO_PET" Type="String" Nullable="false" MaxLength="20" FixedLength="false" Unicode="true" />
+          <Property Name="DATANASC_PET" Type="DateTime" Precision="3" />
+          <Property Name="IDADE" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
+          <Property Name="ESPECIE_PET" Type="String" MaxLength="40" FixedLength="false" Unicode="true" />
+          <Property Name="ATIVO" Type="Boolean" Nullable="false" />
+          <NavigationProperty Name="ATENDIMENTO_VET" Relationship="LOJA_PETModel.FK_PETATENDIMENTO_VET" FromRole="PETS" ToRole="ATENDIMENTO_VET" />
+          <NavigationProperty Name="CIRURGIA" Relationship="LOJA_PETModel.FK_PETCIRURGIA" FromRole="PETS" ToRole="CIRURGIA" />
+          <NavigationProperty Name="INTERNACAO" Relationship="LOJA_PETModel.FK_PETINTERNACAO" FromRole="PETS" ToRole="INTERNACAO" />
+          <NavigationProperty Name="PROPRIETARIOS" Relationship="LOJA_PETModel.FK_PETCliente" FromRole="PETS" ToRole="PROPRIETARIOS" />
+        </EntityType>
+        <EntityType Name="PROPRIETARIO">
+          <Key>
+            <PropertyRef Name="ID_PROPRIETARIO" />
+          </Key>
+          <Property Name="ID_PROPRIETARIO" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="NOME_PROPRIETARIO" Type="String" Nullable="false" MaxLength="40" FixedLength="false" Unicode="true" />
+          <Property Name="EMAIL" Type="String" MaxLength="30" FixedLength="false" Unicode="true" />
+          <Property Name="CELULAR" Type="String" MaxLength="13" FixedLength="false" Unicode="true" />
+          <Property Name="FIXO" Type="String" MaxLength="11" FixedLength="false" Unicode="true" />
+          <Property Name="CEP" Type="String" MaxLength="8" FixedLength="false" Unicode="true" />
+          <Property Name="RUA_AVENIDA" Type="String" MaxLength="40" FixedLength="false" Unicode="true" />
+          <Property Name="NUMERO" Type="String" MaxLength="10" FixedLength="false" Unicode="true" />
+          <Property Name="BAIRRO" Type="String" MaxLength="40" FixedLength="false" Unicode="true" />
+          <Property Name="CIDADE" Type="String" MaxLength="40" FixedLength="false" Unicode="true" />
+          <Property Name="ESTADO" Type="String" MaxLength="40" FixedLength="false" Unicode="true" />
+          <Property Name="ATIVO" Type="Boolean" Nullable="false" />
+          <NavigationProperty Name="ATENDIMENTO_VET" Relationship="LOJA_PETModel.FK_ClienteATENDIMENTO_VET" FromRole="PROPRIETARIOS" ToRole="ATENDIMENTO_VET" />
+          <NavigationProperty Name="CIRURGIA" Relationship="LOJA_PETModel.FK_ClienteCIRURGIA" FromRole="PROPRIETARIOS" ToRole="CIRURGIA" />
+          <NavigationProperty Name="INTERNACAO" Relationship="LOJA_PETModel.FK_ClienteINTERNACAO" FromRole="PROPRIETARIOS" ToRole="INTERNACAO" />
+          <NavigationProperty Name="PETS" Relationship="LOJA_PETModel.FK_PETCliente" FromRole="PROPRIETARIOS" ToRole="PETS" />
+        </EntityType>
+        <EntityType Name="RECEITA">
+          <Key>
+            <PropertyRef Name="ID_RECEITA" />
+          </Key>
+          <Property Name="ID_RECEITA" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="ID_ATENDIMENTO" Type="Int32" Nullable="true" />
+          <Property Name="ID_INTERNACAO" Type="Int32" Nullable="true" />
+          <Property Name="ID_CIRURGIA" Type="Int32" Nullable="true" />
+          <Property Name="DESCRICAO_RECEITA" Type="String" Nullable="false" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="DADOS_RECEITA" Type="String" Nullable="false" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="DATA_RECEITA" Type="DateTime" Nullable="false" Precision="3" />
+          <Property Name="ATIVA" Type="Boolean" Nullable="false" />
+          <NavigationProperty Name="ATENDIMENTO_VET" Relationship="LOJA_PETModel.FK_ATENDIMENTO_VETRECEITA" FromRole="RECEITA" ToRole="ATENDIMENTO_VET" />
+          <NavigationProperty Name="CIRURGIA" Relationship="LOJA_PETModel.FK_RECEITACIRURGIA" FromRole="RECEITA" ToRole="CIRURGIA" />
+          <NavigationProperty Name="INTERNACAO" Relationship="LOJA_PETModel.FK_INTERNACAORECEITA" FromRole="RECEITA" ToRole="INTERNACAO" />
+        </EntityType>
+        <EntityType Name="SERVICO">
+          <Key>
+            <PropertyRef Name="ID_SERVICO" />
+          </Key>
+          <Property Name="ID_SERVICO" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="NOME_SERVICO" Type="String" Nullable="false" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="VALOR_SERVICO" Type="Decimal" Nullable="false" Precision="18" Scale="2" />
+          <Property Name="ATIVO" Type="Boolean" Nullable="false" />
+          <NavigationProperty Name="SERVICO_VETERINARIO" Relationship="LOJA_PETModel.FK_SERVICOSERVICO_VETERINARIO" FromRole="SERVICO" ToRole="SERVICO_VETERINARIO" />
+        </EntityType>
+        <EntityType Name="SERVICO_VETERINARIO">
+          <Key>
+            <PropertyRef Name="ID_ASSOCIACAO" />
+          </Key>
+          <Property Name="ID_ASSOCIACAO" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="ID_SERVICO" Type="Int32" Nullable="false" />
+          <Property Name="NOME_SERVICO" Type="String" Nullable="false" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="VALOR_SERVICO" Type="Decimal" Nullable="false" Precision="18" Scale="2" />
+          <Property Name="ID_ATENDIMENTO" Type="Int32" />
+          <Property Name="ID_INTERNACAO" Type="Int32" />
+          <Property Name="ID_VET" Type="Int32" Nullable="false" />
+          <Property Name="DATA_EXECUCAO" Type="DateTime" Nullable="false" Precision="3" />
+          <NavigationProperty Name="ATENDIMENTO_VET" Relationship="LOJA_PETModel.FK_ATENDIMENTO_VETSERVICO_VETERINARIO" FromRole="SERVICO_VETERINARIO" ToRole="ATENDIMENTO_VET" />
+          <NavigationProperty Name="INTERNACAO" Relationship="LOJA_PETModel.FK_INTERNACAOSERVICO_VETERINARIO" FromRole="SERVICO_VETERINARIO" ToRole="INTERNACAO" />
+          <NavigationProperty Name="SERVICO" Relationship="LOJA_PETModel.FK_SERVICOSERVICO_VETERINARIO" FromRole="SERVICO_VETERINARIO" ToRole="SERVICO" />
+          <NavigationProperty Name="Veterinarios" Relationship="LOJA_PETModel.FK_VeterinariosSERVICO_VETERINARIO" FromRole="SERVICO_VETERINARIO" ToRole="Veterinarios" />
+        </EntityType>
+        <EntityType Name="TOTAL_ATENDIMENTO">
+          <Key>
+            <PropertyRef Name="ID_ASSOCIACAO" />
+          </Key>
+          <Property Name="ID_ASSOCIACAO" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="ID_ATENDIMENTO" Type="Int32" Nullable="false" />
+          <Property Name="SUBTOTAL" Type="Decimal" Nullable="false" Precision="18" Scale="2" />
+          <Property Name="DESCONTO" Type="Decimal" Nullable="false" Precision="18" Scale="2" />
+          <Property Name="ACRESCIMO" Type="Decimal" Nullable="false" Precision="18" Scale="2" />
+          <Property Name="TOTAL" Type="Decimal" Nullable="false" Precision="18" Scale="2" />
+          <Property Name="DATA_FINALIZACAO" Type="DateTime" Nullable="false" Precision="3" />
+          <NavigationProperty Name="ATENDIMENTO_VET" Relationship="LOJA_PETModel.FK_ATENDIMENTO_VETTOTAL_ATENDIMENTO" FromRole="TOTAL_ATENDIMENTO" ToRole="ATENDIMENTO_VET" />
+          <NavigationProperty Name="PAGAMENTOS_ATENDIMENTOS" Relationship="LOJA_PETModel.FK_TOTAL_ATENDIMENTOPAGAMENTOS_ATENDIMENTO" FromRole="TOTAL_ATENDIMENTO" ToRole="PAGAMENTOS_ATENDIMENTOS" />
+        </EntityType>
+        <EntityType Name="TOTAL_INTERNACAO_CIRURGIA">
+          <Key>
+            <PropertyRef Name="ID_ASSOCIACAO" />
+          </Key>
+          <Property Name="ID_ASSOCIACAO" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="ID_INTERNACAO" Type="Int32" />
+          <Property Name="ID_CIRURGIA" Type="Int32" />
+          <Property Name="SUBTOTAL" Type="Decimal" Nullable="false" Precision="18" Scale="2" />
+          <Property Name="DESCONTO" Type="Decimal" Nullable="false" Precision="18" Scale="2" />
+          <Property Name="ACRESCIMO" Type="Decimal" Nullable="false" Precision="18" Scale="2" />
+          <Property Name="TOTAL" Type="Decimal" Nullable="false" Precision="18" Scale="2" />
+          <Property Name="DATA_FINALIZACAO" Type="DateTime" Nullable="false" Precision="3" />
+          <NavigationProperty Name="CIRURGIA" Relationship="LOJA_PETModel.FK_CIRURGIATOTAL_INTERNACAO_CIRURGIA" FromRole="TOTAL_INTERNACAO_CIRURGIA" ToRole="CIRURGIA" />
+          <NavigationProperty Name="INTERNACAO" Relationship="LOJA_PETModel.FK_INTERNACAOTOTAL_INTERNACAO" FromRole="TOTAL_INTERNACAO_CIRURGIA" ToRole="INTERNACAO" />
+          <NavigationProperty Name="PAGAMENTOS_INTERNACAO" Relationship="LOJA_PETModel.FK_TOTAL_ATENDIMENTOPAGAMENTOS_ATENDIMENTO1" FromRole="TOTAL_INTERNACAO_CIRURGIA" ToRole="PAGAMENTOS_INTERNACAO" />
+        </EntityType>
+        <EntityType Name="Tributacao">
+          <Key>
+            <PropertyRef Name="ID_TRIB" />
+          </Key>
+          <Property Name="ID_TRIB" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="TRBID" Type="String" Nullable="false" MaxLength="3" FixedLength="false" Unicode="false" />
+          <Property Name="NOME" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="CST_ENTRADA" Type="String" Nullable="false" MaxLength="3" FixedLength="false" Unicode="false" />
+          <Property Name="CSOSN_ENTRADA" Type="String" Nullable="false" MaxLength="4" FixedLength="false" Unicode="false" />
+          <Property Name="CFOP_ENTRADA_DE" Type="String" Nullable="false" MaxLength="5" FixedLength="false" Unicode="false" />
+          <Property Name="CFOP_ENTRADA_DEV_DE" Type="String" Nullable="false" MaxLength="5" FixedLength="false" Unicode="false" />
+          <Property Name="CFOP_ENTRADA_DEV_FE" Type="String" Nullable="false" MaxLength="5" FixedLength="false" Unicode="false" />
+          <Property Name="CFOP_ENTRADA_FE" Type="String" Nullable="false" MaxLength="5" FixedLength="false" Unicode="false" />
+          <Property Name="CST_SAIDA" Type="String" Nullable="false" MaxLength="3" FixedLength="false" Unicode="false" />
+          <Property Name="CSOSN_SAIDA" Type="String" Nullable="false" MaxLength="4" FixedLength="false" Unicode="false" />
+          <Property Name="CFOP_SAIDA_DE" Type="String" Nullable="false" MaxLength="5" FixedLength="false" Unicode="false" />
+          <Property Name="CFOP_SAIDA_FE" Type="String" Nullable="false" MaxLength="5" FixedLength="false" Unicode="false" />
+          <Property Name="CFOP_SAIDA_DEV_DE" Type="String" Nullable="false" MaxLength="5" FixedLength="false" Unicode="false" />
+          <Property Name="CFOP_SAIDA_DEV_FE" Type="String" Nullable="false" MaxLength="5" FixedLength="false" Unicode="false" />
+          <Property Name="ATIVO" Type="String" Nullable="false" MaxLength="1" FixedLength="true" Unicode="false" />
+        </EntityType>
+        <EntityType Name="USUARIOS">
+          <Key>
+            <PropertyRef Name="Id_USUARIO" />
+          </Key>
+          <Property Name="Id_USUARIO" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="NOME" Type="String" Nullable="false" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="lOGIN" Type="String" Nullable="false" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="SENHA" Type="String" Nullable="false" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="CONTRA_SENHA" Type="String" Nullable="false" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="Email" Type="String" Nullable="false" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="ID_PERFIL" Type="Int32" Nullable="false" />
+          <Property Name="ATIVO" Type="Boolean" Nullable="false" />
+          <NavigationProperty Name="EMPRESA_USUARIO" Relationship="LOJA_PETModel.FK_USUARIOSEMPRESA_USUARIO" FromRole="USUARIOS" ToRole="EMPRESA_USUARIO" />
+          <NavigationProperty Name="PERFIL" Relationship="LOJA_PETModel.FK_PERFILUSUARIOS" FromRole="USUARIOS" ToRole="PERFIL" />
+        </EntityType>
+        <EntityType Name="VET_CIRURGIA">
+          <Key>
+            <PropertyRef Name="ID_ASSOCIACAO" />
+          </Key>
+          <Property Name="ID_ASSOCIACAO" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="ID_VET" Type="Int32" Nullable="false" />
+          <Property Name="ID_CIRURGIA" Type="Int32" Nullable="false" />
+          <Property Name="DIVIDIR_CIRURGIA" Type="Boolean" Nullable="false" />
+          <NavigationProperty Name="CIRURGIA" Relationship="LOJA_PETModel.FK_CIRURGIAVET_CIRURGIA" FromRole="VET_CIRURGIA" ToRole="CIRURGIA" />
+          <NavigationProperty Name="Veterinarios" Relationship="LOJA_PETModel.FK_VeterinariosVET_CIRURGIA" FromRole="VET_CIRURGIA" ToRole="Veterinarios" />
+        </EntityType>
+        <EntityType Name="Veterinarios">
+          <Key>
+            <PropertyRef Name="ID_VET" />
+          </Key>
+          <Property Name="ID_VET" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="NOME_VET" Type="String" Nullable="false" MaxLength="40" FixedLength="false" Unicode="true" />
+          <Property Name="CPF" Type="String" MaxLength="11" FixedLength="false" Unicode="true" />
+          <Property Name="CRMV" Type="String" Nullable="false" MaxLength="20" FixedLength="false" Unicode="true" />
+          <Property Name="TELEFONE" Type="String" MaxLength="11" FixedLength="false" Unicode="true" />
+          <Property Name="CELULAR" Type="String" MaxLength="13" FixedLength="false" Unicode="true" />
+          <Property Name="ATIVO" Type="Boolean" Nullable="false" />
+          <NavigationProperty Name="ATENDIMENTO_VET" Relationship="LOJA_PETModel.FK_VeterinariosATENDIMENTO_VET" FromRole="Veterinarios" ToRole="ATENDIMENTO_VET" />
+          <NavigationProperty Name="CIRURGIA" Relationship="LOJA_PETModel.FK_VeterinariosCIRURGIA" FromRole="Veterinarios" ToRole="CIRURGIA" />
+          <NavigationProperty Name="EMPRESA_VETERINARIO" Relationship="LOJA_PETModel.FK_VeterinariosEMPRESA_VETERINARIO" FromRole="Veterinarios" ToRole="EMPRESA_VETERINARIO" />
+          <NavigationProperty Name="INTERNACAO" Relationship="LOJA_PETModel.FK_VeterinariosINTERNACAO" FromRole="Veterinarios" ToRole="INTERNACAO" />
+          <NavigationProperty Name="SERVICO_VETERINARIO" Relationship="LOJA_PETModel.FK_VeterinariosSERVICO_VETERINARIO" FromRole="Veterinarios" ToRole="SERVICO_VETERINARIO" />
+          <NavigationProperty Name="VET_CIRURGIA" Relationship="LOJA_PETModel.FK_VeterinariosVET_CIRURGIA" FromRole="Veterinarios" ToRole="VET_CIRURGIA" />
+        </EntityType>
+        <Association Name="FK_ATENDIMENTO_VETINTERNACAO">
+          <End Type="LOJA_PETModel.ATENDIMENTO_VET" Role="ATENDIMENTO_VET" Multiplicity="0..1" />
+          <End Type="LOJA_PETModel.INTERNACAO" Role="INTERNACAO" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="ATENDIMENTO_VET">
+              <PropertyRef Name="ID_ATENDIMENTO" />
+            </Principal>
+            <Dependent Role="INTERNACAO">
+              <PropertyRef Name="ID_ATENDIMENTO" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_ATENDIMENTO_VETRECEITA">
+          <End Type="LOJA_PETModel.ATENDIMENTO_VET" Role="ATENDIMENTO_VET" Multiplicity="0..1" />
+          <End Type="LOJA_PETModel.RECEITA" Role="RECEITA" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="ATENDIMENTO_VET">
+              <PropertyRef Name="ID_ATENDIMENTO" />
+            </Principal>
+            <Dependent Role="RECEITA">
+              <PropertyRef Name="ID_ATENDIMENTO" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_ATENDIMENTO_VETSERVICO_VETERINARIO">
+          <End Type="LOJA_PETModel.ATENDIMENTO_VET" Role="ATENDIMENTO_VET" Multiplicity="0..1" />
+          <End Type="LOJA_PETModel.SERVICO_VETERINARIO" Role="SERVICO_VETERINARIO" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="ATENDIMENTO_VET">
+              <PropertyRef Name="ID_ATENDIMENTO" />
+            </Principal>
+            <Dependent Role="SERVICO_VETERINARIO">
+              <PropertyRef Name="ID_ATENDIMENTO" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_ATENDIMENTO_VETTOTAL_ATENDIMENTO">
+          <End Type="LOJA_PETModel.ATENDIMENTO_VET" Role="ATENDIMENTO_VET" Multiplicity="1" />
+          <End Type="LOJA_PETModel.TOTAL_ATENDIMENTO" Role="TOTAL_ATENDIMENTO" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="ATENDIMENTO_VET">
+              <PropertyRef Name="ID_ATENDIMENTO" />
+            </Principal>
+            <Dependent Role="TOTAL_ATENDIMENTO">
+              <PropertyRef Name="ID_ATENDIMENTO" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_CIRURGIAATENDIMENTO_VET">
+          <End Type="LOJA_PETModel.CIRURGIA" Role="CIRURGIA" Multiplicity="0..1" />
+          <End Type="LOJA_PETModel.ATENDIMENTO_VET" Role="ATENDIMENTO_VET" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="CIRURGIA">
+              <PropertyRef Name="ID_CIRURGIA" />
+            </Principal>
+            <Dependent Role="ATENDIMENTO_VET">
+              <PropertyRef Name="ID_CIRURGIA" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_ClienteATENDIMENTO_VET">
+          <End Type="LOJA_PETModel.PROPRIETARIO" Role="PROPRIETARIOS" Multiplicity="1" />
+          <End Type="LOJA_PETModel.ATENDIMENTO_VET" Role="ATENDIMENTO_VET" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="PROPRIETARIOS">
+              <PropertyRef Name="ID_PROPRIETARIO" />
+            </Principal>
+            <Dependent Role="ATENDIMENTO_VET">
+              <PropertyRef Name="ID_CLIENTE" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_EMPRESAATENDIMENTO_VET">
+          <End Type="LOJA_PETModel.EMPRESA" Role="EMPRESA" Multiplicity="1" />
+          <End Type="LOJA_PETModel.ATENDIMENTO_VET" Role="ATENDIMENTO_VET" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="EMPRESA">
+              <PropertyRef Name="ID_EMPRESA" />
+            </Principal>
+            <Dependent Role="ATENDIMENTO_VET">
+              <PropertyRef Name="ID_EMPRESA" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_PETATENDIMENTO_VET">
+          <End Type="LOJA_PETModel.PET" Role="PETS" Multiplicity="1" />
+          <End Type="LOJA_PETModel.ATENDIMENTO_VET" Role="ATENDIMENTO_VET" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="PETS">
+              <PropertyRef Name="ID_PET" />
+            </Principal>
+            <Dependent Role="ATENDIMENTO_VET">
+              <PropertyRef Name="ID_PET" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_VeterinariosATENDIMENTO_VET">
+          <End Type="LOJA_PETModel.Veterinarios" Role="Veterinarios" Multiplicity="1" />
+          <End Type="LOJA_PETModel.ATENDIMENTO_VET" Role="ATENDIMENTO_VET" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Veterinarios">
+              <PropertyRef Name="ID_VET" />
+            </Principal>
+            <Dependent Role="ATENDIMENTO_VET">
+              <PropertyRef Name="ID_VET" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_CIRURGIAINTERNACAO">
+          <End Type="LOJA_PETModel.CIRURGIA" Role="CIRURGIA" Multiplicity="0..1" />
+          <End Type="LOJA_PETModel.INTERNACAO" Role="INTERNACAO" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="CIRURGIA">
+              <PropertyRef Name="ID_CIRURGIA" />
+            </Principal>
+            <Dependent Role="INTERNACAO">
+              <PropertyRef Name="ID_CIRURGIA" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_CIRURGIATOTAL_INTERNACAO_CIRURGIA">
+          <End Type="LOJA_PETModel.CIRURGIA" Role="CIRURGIA" Multiplicity="0..1" />
+          <End Type="LOJA_PETModel.TOTAL_INTERNACAO_CIRURGIA" Role="TOTAL_INTERNACAO_CIRURGIA" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="CIRURGIA">
+              <PropertyRef Name="ID_CIRURGIA" />
+            </Principal>
+            <Dependent Role="TOTAL_INTERNACAO_CIRURGIA">
+              <PropertyRef Name="ID_CIRURGIA" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_CIRURGIATOTAL_INTERNACAO_CIRURGIA1">
+          <End Type="LOJA_PETModel.CIRURGIA" Role="CIRURGIA" Multiplicity="0..1" />
+          <End Type="LOJA_PETModel.TOTAL_INTERNACAO_CIRURGIA" Role="TOTAL_INTERNACAO_CIRURGIA" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="CIRURGIA">
+              <PropertyRef Name="ID_CIRURGIA" />
+            </Principal>
+            <Dependent Role="TOTAL_INTERNACAO_CIRURGIA">
+              <PropertyRef Name="ID_CIRURGIA" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_CIRURGIAVET_CIRURGIA">
+          <End Type="LOJA_PETModel.CIRURGIA" Role="CIRURGIA" Multiplicity="1" />
+          <End Type="LOJA_PETModel.VET_CIRURGIA" Role="VET_CIRURGIA" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="CIRURGIA">
+              <PropertyRef Name="ID_CIRURGIA" />
+            </Principal>
+            <Dependent Role="VET_CIRURGIA">
+              <PropertyRef Name="ID_CIRURGIA" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_ClienteCIRURGIA">
+          <End Type="LOJA_PETModel.PROPRIETARIO" Role="PROPRIETARIOS" Multiplicity="1" />
+          <End Type="LOJA_PETModel.CIRURGIA" Role="CIRURGIA" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="PROPRIETARIOS">
+              <PropertyRef Name="ID_PROPRIETARIO" />
+            </Principal>
+            <Dependent Role="CIRURGIA">
+              <PropertyRef Name="ID_CLIENTE" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_EMPRESACIRURGIA">
+          <End Type="LOJA_PETModel.EMPRESA" Role="EMPRESA" Multiplicity="1" />
+          <End Type="LOJA_PETModel.CIRURGIA" Role="CIRURGIA" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="EMPRESA">
+              <PropertyRef Name="ID_EMPRESA" />
+            </Principal>
+            <Dependent Role="CIRURGIA">
+              <PropertyRef Name="ID_EMPRESA" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_PETCIRURGIA">
+          <End Type="LOJA_PETModel.PET" Role="PETS" Multiplicity="1" />
+          <End Type="LOJA_PETModel.CIRURGIA" Role="CIRURGIA" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="PETS">
+              <PropertyRef Name="ID_PET" />
+            </Principal>
+            <Dependent Role="CIRURGIA">
+              <PropertyRef Name="ID_PET" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_RECEITACIRURGIA">
+          <End Type="LOJA_PETModel.CIRURGIA" Role="CIRURGIA" Multiplicity="0..1" />
+          <End Type="LOJA_PETModel.RECEITA" Role="RECEITA" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="CIRURGIA">
+              <PropertyRef Name="ID_CIRURGIA" />
+            </Principal>
+            <Dependent Role="RECEITA">
+              <PropertyRef Name="ID_CIRURGIA" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_VeterinariosCIRURGIA">
+          <End Type="LOJA_PETModel.Veterinarios" Role="Veterinarios" Multiplicity="1" />
+          <End Type="LOJA_PETModel.CIRURGIA" Role="CIRURGIA" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Veterinarios">
+              <PropertyRef Name="ID_VET" />
+            </Principal>
+            <Dependent Role="CIRURGIA">
+              <PropertyRef Name="ID_VET_PRINCIPAL" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_EMPRESACONFIG">
+          <End Type="LOJA_PETModel.CONFIG" Role="CONFIG" Multiplicity="1" />
+          <End Type="LOJA_PETModel.EMPRESA" Role="EMPRESA" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="CONFIG">
+              <PropertyRef Name="ID_CONFIG" />
+            </Principal>
+            <Dependent Role="EMPRESA">
+              <PropertyRef Name="ID_CONFIG" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_EMAILEMPRESA_EMAIL">
+          <End Type="LOJA_PETModel.EMAIL" Role="EMAIL" Multiplicity="1" />
+          <End Type="LOJA_PETModel.EMPRESA_EMAIL" Role="EMPRESA_EMAIL" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="EMAIL">
+              <PropertyRef Name="ID_EMAIL" />
+            </Principal>
+            <Dependent Role="EMPRESA_EMAIL">
+              <PropertyRef Name="ID_EMAIL" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_EMPRESA_EMAIL1">
+          <End Type="LOJA_PETModel.EMPRESA" Role="EMPRESA" Multiplicity="1" />
+          <End Type="LOJA_PETModel.EMPRESA_EMAIL" Role="EMPRESA_EMAIL" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="EMPRESA">
+              <PropertyRef Name="ID_EMPRESA" />
+            </Principal>
+            <Dependent Role="EMPRESA_EMAIL">
+              <PropertyRef Name="ID_EMPRESA" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_EMPRESAEMPRESA_USUARIO">
+          <End Type="LOJA_PETModel.EMPRESA" Role="EMPRESA" Multiplicity="1" />
+          <End Type="LOJA_PETModel.EMPRESA_USUARIO" Role="EMPRESA_USUARIO" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="EMPRESA">
+              <PropertyRef Name="ID_EMPRESA" />
+            </Principal>
+            <Dependent Role="EMPRESA_USUARIO">
+              <PropertyRef Name="ID_EMPRESA" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_EMPRESAEMPRESA_VETERINARIO">
+          <End Type="LOJA_PETModel.EMPRESA" Role="EMPRESA" Multiplicity="1" />
+          <End Type="LOJA_PETModel.EMPRESA_VETERINARIO" Role="EMPRESA_VETERINARIO" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="EMPRESA">
+              <PropertyRef Name="ID_EMPRESA" />
+            </Principal>
+            <Dependent Role="EMPRESA_VETERINARIO">
+              <PropertyRef Name="ID_EMPRESA" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_EMPRESAINTERNACAO">
+          <End Type="LOJA_PETModel.EMPRESA" Role="EMPRESA" Multiplicity="1" />
+          <End Type="LOJA_PETModel.INTERNACAO" Role="INTERNACAO" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="EMPRESA">
+              <PropertyRef Name="ID_EMPRESA" />
+            </Principal>
+            <Dependent Role="INTERNACAO">
+              <PropertyRef Name="ID_EMPRESA" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_USUARIOSEMPRESA_USUARIO">
+          <End Type="LOJA_PETModel.USUARIOS" Role="USUARIOS" Multiplicity="1" />
+          <End Type="LOJA_PETModel.EMPRESA_USUARIO" Role="EMPRESA_USUARIO" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="USUARIOS">
+              <PropertyRef Name="Id_USUARIO" />
+            </Principal>
+            <Dependent Role="EMPRESA_USUARIO">
+              <PropertyRef Name="ID_USUARIO" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_VeterinariosEMPRESA_VETERINARIO">
+          <End Type="LOJA_PETModel.Veterinarios" Role="Veterinarios" Multiplicity="1" />
+          <End Type="LOJA_PETModel.EMPRESA_VETERINARIO" Role="EMPRESA_VETERINARIO" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Veterinarios">
+              <PropertyRef Name="ID_VET" />
+            </Principal>
+            <Dependent Role="EMPRESA_VETERINARIO">
+              <PropertyRef Name="ID_VET" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_ClienteINTERNACAO">
+          <End Type="LOJA_PETModel.PROPRIETARIO" Role="PROPRIETARIOS" Multiplicity="1" />
+          <End Type="LOJA_PETModel.INTERNACAO" Role="INTERNACAO" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="PROPRIETARIOS">
+              <PropertyRef Name="ID_PROPRIETARIO" />
+            </Principal>
+            <Dependent Role="INTERNACAO">
+              <PropertyRef Name="ID_CLIENTE" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_INTERNACAORECEITA">
+          <End Type="LOJA_PETModel.INTERNACAO" Role="INTERNACAO" Multiplicity="0..1" />
+          <End Type="LOJA_PETModel.RECEITA" Role="RECEITA" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="INTERNACAO">
+              <PropertyRef Name="ID_INTERNACAO" />
+            </Principal>
+            <Dependent Role="RECEITA">
+              <PropertyRef Name="ID_INTERNACAO" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_INTERNACAOSERVICO_VETERINARIO">
+          <End Type="LOJA_PETModel.INTERNACAO" Role="INTERNACAO" Multiplicity="0..1" />
+          <End Type="LOJA_PETModel.SERVICO_VETERINARIO" Role="SERVICO_VETERINARIO" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="INTERNACAO">
+              <PropertyRef Name="ID_INTERNACAO" />
+            </Principal>
+            <Dependent Role="SERVICO_VETERINARIO">
+              <PropertyRef Name="ID_INTERNACAO" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_INTERNACAOTOTAL_INTERNACAO">
+          <End Type="LOJA_PETModel.INTERNACAO" Role="INTERNACAO" Multiplicity="0..1" />
+          <End Type="LOJA_PETModel.TOTAL_INTERNACAO_CIRURGIA" Role="TOTAL_INTERNACAO_CIRURGIA" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="INTERNACAO">
+              <PropertyRef Name="ID_INTERNACAO" />
+            </Principal>
+            <Dependent Role="TOTAL_INTERNACAO_CIRURGIA">
+              <PropertyRef Name="ID_INTERNACAO" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_PETINTERNACAO">
+          <End Type="LOJA_PETModel.PET" Role="PETS" Multiplicity="1" />
+          <End Type="LOJA_PETModel.INTERNACAO" Role="INTERNACAO" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="PETS">
+              <PropertyRef Name="ID_PET" />
+            </Principal>
+            <Dependent Role="INTERNACAO">
+              <PropertyRef Name="ID_PET" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_VeterinariosINTERNACAO">
+          <End Type="LOJA_PETModel.Veterinarios" Role="Veterinarios" Multiplicity="1" />
+          <End Type="LOJA_PETModel.INTERNACAO" Role="INTERNACAO" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Veterinarios">
+              <PropertyRef Name="ID_VET" />
+            </Principal>
+            <Dependent Role="INTERNACAO">
+              <PropertyRef Name="ID_VET" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_PAGAMENTOSPAGAMENTOS_ATENDIMENTO">
+          <End Type="LOJA_PETModel.PAGAMENTOS" Role="PAGAMENTOS" Multiplicity="1" />
+          <End Type="LOJA_PETModel.PAGAMENTOS_ATENDIMENTOS" Role="PAGAMENTOS_ATENDIMENTOS" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="PAGAMENTOS">
+              <PropertyRef Name="ID_PAGAMENTOS" />
+            </Principal>
+            <Dependent Role="PAGAMENTOS_ATENDIMENTOS">
+              <PropertyRef Name="ID_PAGAMENTO" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_PAGAMENTOSPAGAMENTOS_INTERNACAO">
+          <End Type="LOJA_PETModel.PAGAMENTOS" Role="PAGAMENTOS" Multiplicity="1" />
+          <End Type="LOJA_PETModel.PAGAMENTOS_INTERNACAO" Role="PAGAMENTOS_INTERNACAO" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="PAGAMENTOS">
+              <PropertyRef Name="ID_PAGAMENTOS" />
+            </Principal>
+            <Dependent Role="PAGAMENTOS_INTERNACAO">
+              <PropertyRef Name="ID_PAGAMENTO" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_TOTAL_ATENDIMENTOPAGAMENTOS_ATENDIMENTO">
+          <End Type="LOJA_PETModel.TOTAL_ATENDIMENTO" Role="TOTAL_ATENDIMENTO" Multiplicity="1" />
+          <End Type="LOJA_PETModel.PAGAMENTOS_ATENDIMENTOS" Role="PAGAMENTOS_ATENDIMENTOS" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="TOTAL_ATENDIMENTO">
+              <PropertyRef Name="ID_ASSOCIACAO" />
+            </Principal>
+            <Dependent Role="PAGAMENTOS_ATENDIMENTOS">
+              <PropertyRef Name="ID_TIPO_ATENDIMENTO" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_TOTAL_ATENDIMENTOPAGAMENTOS_ATENDIMENTO1">
+          <End Type="LOJA_PETModel.TOTAL_INTERNACAO_CIRURGIA" Role="TOTAL_INTERNACAO_CIRURGIA" Multiplicity="1" />
+          <End Type="LOJA_PETModel.PAGAMENTOS_INTERNACAO" Role="PAGAMENTOS_INTERNACAO" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="TOTAL_INTERNACAO_CIRURGIA">
+              <PropertyRef Name="ID_ASSOCIACAO" />
+            </Principal>
+            <Dependent Role="PAGAMENTOS_INTERNACAO">
+              <PropertyRef Name="ID_TIPO_ATENDIMENTO" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_PERFILUSUARIOS">
+          <End Type="LOJA_PETModel.PERFIL" Role="PERFIL" Multiplicity="1" />
+          <End Type="LOJA_PETModel.USUARIOS" Role="USUARIOS" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="PERFIL">
+              <PropertyRef Name="ID_PERFIL" />
+            </Principal>
+            <Dependent Role="USUARIOS">
+              <PropertyRef Name="ID_PERFIL" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_PETCliente">
+          <End Type="LOJA_PETModel.PROPRIETARIO" Role="PROPRIETARIOS" Multiplicity="1" />
+          <End Type="LOJA_PETModel.PET" Role="PETS" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="PROPRIETARIOS">
+              <PropertyRef Name="ID_PROPRIETARIO" />
+            </Principal>
+            <Dependent Role="PETS">
+              <PropertyRef Name="COD_CLIENTE" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_SERVICOSERVICO_VETERINARIO">
+          <End Type="LOJA_PETModel.SERVICO" Role="SERVICO" Multiplicity="1" />
+          <End Type="LOJA_PETModel.SERVICO_VETERINARIO" Role="SERVICO_VETERINARIO" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="SERVICO">
+              <PropertyRef Name="ID_SERVICO" />
+            </Principal>
+            <Dependent Role="SERVICO_VETERINARIO">
+              <PropertyRef Name="ID_SERVICO" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_VeterinariosSERVICO_VETERINARIO">
+          <End Type="LOJA_PETModel.Veterinarios" Role="Veterinarios" Multiplicity="1" />
+          <End Type="LOJA_PETModel.SERVICO_VETERINARIO" Role="SERVICO_VETERINARIO" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Veterinarios">
+              <PropertyRef Name="ID_VET" />
+            </Principal>
+            <Dependent Role="SERVICO_VETERINARIO">
+              <PropertyRef Name="ID_VET" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_VeterinariosVET_CIRURGIA">
+          <End Type="LOJA_PETModel.Veterinarios" Role="Veterinarios" Multiplicity="1" />
+          <End Type="LOJA_PETModel.VET_CIRURGIA" Role="VET_CIRURGIA" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Veterinarios">
+              <PropertyRef Name="ID_VET" />
+            </Principal>
+            <Dependent Role="VET_CIRURGIA">
+              <PropertyRef Name="ID_VET" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <EntityType Name="TAXAS">
+          <Key>
+            <PropertyRef Name="ID_TAXAS" />
+          </Key>
+          <Property Name="ID_TAXAS" Nullable="false" Type="Int32" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="DESCRICAOTX" Type="String" Nullable="false" MaxLength="Max" Unicode="true" FixedLength="false" />
+          <Property Name="TAXACREDITO1" Type="Decimal" Nullable="false" Precision="18" Scale="2" />
+          <Property Name="TAXACREDITO2" Type="Decimal" Nullable="false" Precision="18" Scale="2" />
+          <Property Name="TAXACREDITO3" Type="Decimal" Nullable="false" Precision="18" Scale="2" />
+          <Property Name="TAXACREDITO4" Type="Decimal" Nullable="false" Precision="18" Scale="2" />
+          <Property Name="TAXACREDITO5" Type="Decimal" Nullable="false" Precision="18" Scale="2" />
+          <Property Name="TAXACREDITO6" Type="Decimal" Nullable="false" Precision="18" Scale="2" />
+          <Property Name="TAXACREDITO7" Type="Decimal" Nullable="false" Precision="18" Scale="2" />
+          <Property Name="TAXACREDITO10" Type="Decimal" Nullable="false" Precision="18" Scale="2" />
+          <Property Name="TAXADEBITO" Type="Decimal" Nullable="false" Precision="18" Scale="2" />
+          <Property Name="TAXABOLETO" Type="Decimal" Nullable="false" Precision="18" Scale="2" />
+          <Property Name="P_DIV" Type="Boolean" Nullable="false" />
+          <Property Name="ATIVO" Type="Boolean" Nullable="false" />
+          <NavigationProperty Name="PAGAMENTOS" Relationship="LOJA_PETModel.TAXASPAGAMENTOS" FromRole="TAXAS" ToRole="PAGAMENTOS" />
+        </EntityType>
+        <Association Name="TAXASPAGAMENTOS">
+          <End Type="LOJA_PETModel.TAXAS" Role="TAXAS" Multiplicity="1" />
+          <End Type="LOJA_PETModel.PAGAMENTOS" Role="PAGAMENTOS" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="TAXAS">
+              <PropertyRef Name="ID_TAXAS" />
+            </Principal>
+            <Dependent Role="PAGAMENTOS">
+              <PropertyRef Name="ID_TAXAS" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <EntityType Name="b_pessoas_empresa_pet">
+          <Key>
+            <PropertyRef Name="NOME_PET" />
+            <PropertyRef Name="ID_PET" />
+            <PropertyRef Name="RACA_PET" />
+            <PropertyRef Name="SEXO_PET" />
+            <PropertyRef Name="NOME_PROPRIETARIO" />
+            <PropertyRef Name="ATIVO" />
+            <PropertyRef Name="RAZAO_SOCIAL" />
+          </Key>
+          <Property Name="NOME_PET" Type="String" Nullable="false" MaxLength="40" FixedLength="false" Unicode="true" />
+          <Property Name="ESPECIE_PET" Type="String" MaxLength="40" FixedLength="false" Unicode="true" />
+          <Property Name="ID_PET" Type="Int32" Nullable="false" />
+          <Property Name="IDADE" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
+          <Property Name="RACA_PET" Type="String" Nullable="false" MaxLength="20" FixedLength="false" Unicode="true" />
+          <Property Name="SEXO_PET" Type="String" Nullable="false" MaxLength="20" FixedLength="false" Unicode="true" />
+          <Property Name="NOME_PROPRIETARIO" Type="String" Nullable="false" MaxLength="40" FixedLength="false" Unicode="true" />
+          <Property Name="CELULAR" Type="String" MaxLength="13" FixedLength="false" Unicode="true" />
+          <Property Name="FIXO" Type="String" MaxLength="11" FixedLength="false" Unicode="true" />
+          <Property Name="CIDADE" Type="String" MaxLength="40" FixedLength="false" Unicode="true" />
+          <Property Name="ESTADO" Type="String" MaxLength="40" FixedLength="false" Unicode="true" />
+          <Property Name="ATIVO" Type="Boolean" Nullable="false" />
+          <Property Name="FANTASIA" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="RAZAO_SOCIAL" Type="String" Nullable="false" MaxLength="Max" FixedLength="false" Unicode="true" />
+        </EntityType>
+      </Schema>
+    </edmx:ConceptualModels>
+    <!-- C-S mapping content -->
+    <edmx:Mappings>
+    <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="LOJA_PETModelStoreContainer" CdmEntityContainer="LOJA_PETEntities">
+    <EntitySetMapping Name="ATENDIMENTO_VET">
+      <EntityTypeMapping TypeName="IsTypeOf(LOJA_PETModel.ATENDIMENTO_VET)">
+        <MappingFragment StoreEntitySet="ATENDIMENTO_VET">
+          <ScalarProperty Name="ID_ATENDIMENTO" ColumnName="ID_ATENDIMENTO" />
+          <ScalarProperty Name="ID_VET" ColumnName="ID_VET" />
+          <ScalarProperty Name="ID_PET" ColumnName="ID_PET" />
+          <ScalarProperty Name="ID_EMPRESA" ColumnName="ID_EMPRESA" />
+          <ScalarProperty Name="ID_CLIENTE" ColumnName="ID_CLIENTE" />
+          <ScalarProperty Name="SINTOMAS" ColumnName="SINTOMAS" />
+          <ScalarProperty Name="REQUISICAO_EXAMES" ColumnName="REQUISICAO_EXAMES" />
+          <ScalarProperty Name="PESO_PET" ColumnName="PESO_PET" />
+          <ScalarProperty Name="ID_INTERNACAO" ColumnName="ID_INTERNACAO" />
+          <ScalarProperty Name="ID_CIRURGIA" ColumnName="ID_CIRURGIA" />
+          <ScalarProperty Name="TIPO_ATENDIMENTO" ColumnName="TIPO_ATENDIMENTO" />
+          <ScalarProperty Name="TAXASID_TAXAS" ColumnName="TAXASID_TAXAS" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="CEP">
+      <EntityTypeMapping TypeName="IsTypeOf(LOJA_PETModel.CEP)">
+        <MappingFragment StoreEntitySet="CEP">
+          <ScalarProperty Name="ID_CEP" ColumnName="ID_CEP" />
+          <ScalarProperty Name="NUM_CEP" ColumnName="NUM_CEP" />
+          <ScalarProperty Name="ENDERECO" ColumnName="ENDERECO" />
+          <ScalarProperty Name="COMPLEMENTO" ColumnName="COMPLEMENTO" />
+          <ScalarProperty Name="BAIRRO" ColumnName="BAIRRO" />
+          <ScalarProperty Name="CIDADE" ColumnName="CIDADE" />
+          <ScalarProperty Name="ESTADO" ColumnName="ESTADO" />
+          <ScalarProperty Name="PAIS" ColumnName="PAIS" />
+          <ScalarProperty Name="IBGE" ColumnName="IBGE" />
+          <ScalarProperty Name="COD_CEP" ColumnName="COD_CEP" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="CFOP">
+      <EntityTypeMapping TypeName="IsTypeOf(LOJA_PETModel.CFOP)">
+        <MappingFragment StoreEntitySet="CFOP">
+          <ScalarProperty Name="ID_CFOP" ColumnName="ID_CFOP" />
+          <ScalarProperty Name="CFOP1" ColumnName="CFOP1" />
+          <ScalarProperty Name="Descricao" ColumnName="Descricao" />
+          <ScalarProperty Name="MOV_ESTQ" ColumnName="MOV_ESTQ" />
+          <ScalarProperty Name="ATUALIZA_CUSTO" ColumnName="ATUALIZA_CUSTO" />
+          <ScalarProperty Name="TIPO_MOV" ColumnName="TIPO_MOV" />
+          <ScalarProperty Name="ATIVO" ColumnName="ATIVO" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="CIRURGIA">
+      <EntityTypeMapping TypeName="IsTypeOf(LOJA_PETModel.CIRURGIA)">
+        <MappingFragment StoreEntitySet="CIRURGIA">
+          <ScalarProperty Name="ID_CIRURGIA" ColumnName="ID_CIRURGIA" />
+          <ScalarProperty Name="ID_VET_PRINCIPAL" ColumnName="ID_VET_PRINCIPAL" />
+          <ScalarProperty Name="ID_PET" ColumnName="ID_PET" />
+          <ScalarProperty Name="ID_EMPRESA" ColumnName="ID_EMPRESA" />
+          <ScalarProperty Name="ID_CLIENTE" ColumnName="ID_CLIENTE" />
+          <ScalarProperty Name="PESO_PET" ColumnName="PESO_PET" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="CLIENTES">
+      <EntityTypeMapping TypeName="IsTypeOf(LOJA_PETModel.CLIENTE)">
+        <MappingFragment StoreEntitySet="CLIENTES">
+          <ScalarProperty Name="COD_CLIENTE" ColumnName="COD_CLIENTE" />
+          <ScalarProperty Name="CPF" ColumnName="CPF" />
+          <ScalarProperty Name="NOME" ColumnName="NOME" />
+          <ScalarProperty Name="TELEFONE" ColumnName="TELEFONE" />
+          <ScalarProperty Name="CELULAR" ColumnName="CELULAR" />
+          <ScalarProperty Name="EMAIL" ColumnName="EMAIL" />
+          <ScalarProperty Name="CEP" ColumnName="CEP" />
+          <ScalarProperty Name="RUA" ColumnName="RUA" />
+          <ScalarProperty Name="NUMERO" ColumnName="NUMERO" />
+          <ScalarProperty Name="BAIRRO" ColumnName="BAIRRO" />
+          <ScalarProperty Name="CIDADE" ColumnName="CIDADE" />
+          <ScalarProperty Name="ESTADO" ColumnName="ESTADO" />
+          <ScalarProperty Name="ATIVO" ColumnName="ATIVO" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Compromissos">
+      <EntityTypeMapping TypeName="IsTypeOf(LOJA_PETModel.Compromissos)">
+        <MappingFragment StoreEntitySet="Compromissos">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="Data" ColumnName="Data" />
+          <ScalarProperty Name="Hora" ColumnName="Hora" />
+          <ScalarProperty Name="Descricao" ColumnName="Descricao" />
+          <ScalarProperty Name="USUARIO_CRIOU_COMP" ColumnName="USUARIO_CRIOU_COMP" />
+          <ScalarProperty Name="USUARIO_P_COMP" ColumnName="USUARIO_P_COMP" />
+          <ScalarProperty Name="Entidade_Registro" ColumnName="Entidade_Registro" />
+          <ScalarProperty Name="ID_REGISTRO" ColumnName="ID_REGISTRO" />
+          <ScalarProperty Name="Concluido" ColumnName="Concluido" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="CONFIG">
+      <EntityTypeMapping TypeName="IsTypeOf(LOJA_PETModel.CONFIG)">
+        <MappingFragment StoreEntitySet="CONFIG">
+          <ScalarProperty Name="ID_CONFIG" ColumnName="ID_CONFIG" />
+          <ScalarProperty Name="AT_CHV" ColumnName="AT_CHV" />
+          <ScalarProperty Name="DT_INST" ColumnName="DT_INST" />
+          <ScalarProperty Name="DT_VAL" ColumnName="DT_VAL" />
+          <ScalarProperty Name="MOV_ESTOQUE" ColumnName="MOV_ESTOQUE" />
+          <ScalarProperty Name="UT_BANHOETOSA" ColumnName="UT_BANHOETOSA" />
+          <ScalarProperty Name="UT_FIN" ColumnName="UT_FIN" />
+          <ScalarProperty Name="UT_VENDA" ColumnName="UT_VENDA" />
+          <ScalarProperty Name="AT_ESTQ" ColumnName="AT_ESTQ" />
+          <ScalarProperty Name="Val_CPF_CNPJ" ColumnName="Val_CPF_CNPJ" />
+          <ScalarProperty Name="ATIVO" ColumnName="ATIVO" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="EMAIL">
+      <EntityTypeMapping TypeName="IsTypeOf(LOJA_PETModel.EMAIL)">
+        <MappingFragment StoreEntitySet="EMAIL">
+          <ScalarProperty Name="ID_EMAIL" ColumnName="ID_EMAIL" />
+          <ScalarProperty Name="END_EMAIL" ColumnName="END_EMAIL" />
+          <ScalarProperty Name="SENHA" ColumnName="SENHA" />
+          <ScalarProperty Name="SMTP" ColumnName="SMTP" />
+          <ScalarProperty Name="PORTA" ColumnName="PORTA" />
+          <ScalarProperty Name="Req_AUT" ColumnName="Req_AUT" />
+          <ScalarProperty Name="Req_SSL" ColumnName="Req_SSL" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="EMPRESA">
+      <EntityTypeMapping TypeName="IsTypeOf(LOJA_PETModel.EMPRESA)">
+        <MappingFragment StoreEntitySet="EMPRESA">
+          <ScalarProperty Name="ID_EMPRESA" ColumnName="ID_EMPRESA" />
+          <ScalarProperty Name="RAZAO_SOCIAL" ColumnName="RAZAO_SOCIAL" />
+          <ScalarProperty Name="FANTASIA" ColumnName="FANTASIA" />
+          <ScalarProperty Name="CNPJ_CPF" ColumnName="CNPJ_CPF" />
+          <ScalarProperty Name="IE_RG" ColumnName="IE_RG" />
+          <ScalarProperty Name="CEP" ColumnName="CEP" />
+          <ScalarProperty Name="ENDERECO" ColumnName="ENDERECO" />
+          <ScalarProperty Name="NUMERO" ColumnName="NUMERO" />
+          <ScalarProperty Name="COMPLEMENTO" ColumnName="COMPLEMENTO" />
+          <ScalarProperty Name="BAIRRO" ColumnName="BAIRRO" />
+          <ScalarProperty Name="CIDADE" ColumnName="CIDADE" />
+          <ScalarProperty Name="ESTADO" ColumnName="ESTADO" />
+          <ScalarProperty Name="PAIS" ColumnName="PAIS" />
+          <ScalarProperty Name="TELEFONE" ColumnName="TELEFONE" />
+          <ScalarProperty Name="CELULAR" ColumnName="CELULAR" />
+          <ScalarProperty Name="EMAIL" ColumnName="EMAIL" />
+          <ScalarProperty Name="CHV" ColumnName="CHV" />
+          <ScalarProperty Name="ID_CONFIG" ColumnName="ID_CONFIG" />
+          <ScalarProperty Name="IMAGEM" ColumnName="IMAGEM" />
+          <ScalarProperty Name="TIPO_EMPRESA" ColumnName="TIPO_EMPRESA" />
+          <ScalarProperty Name="Tipo_juros" ColumnName="Tipo_juros" />
+          <ScalarProperty Name="Cobr_juros" ColumnName="Cobr_juros" />
+          <ScalarProperty Name="P_juros" ColumnName="P_juros" />
+          <ScalarProperty Name="P_MULTA" ColumnName="P_MULTA" />
+          <ScalarProperty Name="ATIVO" ColumnName="ATIVO" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="EMPRESA_EMAIL">
+      <EntityTypeMapping TypeName="IsTypeOf(LOJA_PETModel.EMPRESA_EMAIL)">
+        <MappingFragment StoreEntitySet="EMPRESA_EMAIL">
+          <ScalarProperty Name="ID_ASSOCIACAO" ColumnName="ID_ASSOCIACAO" />
+          <ScalarProperty Name="ID_EMPRESA" ColumnName="ID_EMPRESA" />
+          <ScalarProperty Name="ID_EMAIL" ColumnName="ID_EMAIL" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="EMPRESA_USUARIO">
+      <EntityTypeMapping TypeName="IsTypeOf(LOJA_PETModel.EMPRESA_USUARIO)">
+        <MappingFragment StoreEntitySet="EMPRESA_USUARIO">
+          <ScalarProperty Name="ID_ASSOCIACAO" ColumnName="ID_ASSOCIACAO" />
+          <ScalarProperty Name="ID_EMPRESA" ColumnName="ID_EMPRESA" />
+          <ScalarProperty Name="ID_USUARIO" ColumnName="ID_USUARIO" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="EMPRESA_VETERINARIO">
+      <EntityTypeMapping TypeName="IsTypeOf(LOJA_PETModel.EMPRESA_VETERINARIO)">
+        <MappingFragment StoreEntitySet="EMPRESA_VETERINARIO">
+          <ScalarProperty Name="ID_ASSOCIACAO" ColumnName="ID_ASSOCIACAO" />
+          <ScalarProperty Name="ID_EMPRESA" ColumnName="ID_EMPRESA" />
+          <ScalarProperty Name="ID_VET" ColumnName="ID_VET" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="GRP">
+      <EntityTypeMapping TypeName="IsTypeOf(LOJA_PETModel.GRP)">
+        <MappingFragment StoreEntitySet="GRP">
+          <ScalarProperty Name="COD_GRP" ColumnName="COD_GRP" />
+          <ScalarProperty Name="nome_grupo" ColumnName="nome_grupo" />
+          <ScalarProperty Name="Prod_Vend" ColumnName="Prod_Vend" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="INTERNACAO">
+      <EntityTypeMapping TypeName="IsTypeOf(LOJA_PETModel.INTERNACAO)">
+        <MappingFragment StoreEntitySet="INTERNACAO">
+          <ScalarProperty Name="ID_INTERNACAO" ColumnName="ID_INTERNACAO" />
+          <ScalarProperty Name="ID_VET" ColumnName="ID_VET" />
+          <ScalarProperty Name="ID_PET" ColumnName="ID_PET" />
+          <ScalarProperty Name="ID_EMPRESA" ColumnName="ID_EMPRESA" />
+          <ScalarProperty Name="ID_CLIENTE" ColumnName="ID_CLIENTE" />
+          <ScalarProperty Name="PESO_PET" ColumnName="PESO_PET" />
+          <ScalarProperty Name="ID_ATENDIMENTO" ColumnName="ID_ATENDIMENTO" />
+          <ScalarProperty Name="ID_CIRURGIA" ColumnName="ID_CIRURGIA" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="PAGAMENTOS">
+      <EntityTypeMapping TypeName="IsTypeOf(LOJA_PETModel.PAGAMENTOS)">
+        <MappingFragment StoreEntitySet="PAGAMENTOS">
+          <ScalarProperty Name="ID_PAGAMENTOS" ColumnName="ID_PAGAMENTOS" />
+          <ScalarProperty Name="NOME" ColumnName="NOME" />
+          <ScalarProperty Name="TIPO_PAG" ColumnName="TIPO_PAG" />
+          <ScalarProperty Name="ID_TAXAS" ColumnName="ID_TAXAS" />
+          <ScalarProperty Name="Gera_Fin" ColumnName="Gera_Fin" />
+          <ScalarProperty Name="ATIVO" ColumnName="ATIVO" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="PAGAMENTOS_ATENDIMENTOS">
+      <EntityTypeMapping TypeName="IsTypeOf(LOJA_PETModel.PAGAMENTOS_ATENDIMENTOS)">
+        <MappingFragment StoreEntitySet="PAGAMENTOS_ATENDIMENTOS">
+          <ScalarProperty Name="ID_ASSOCIACAO" ColumnName="ID_ASSOCIACAO" />
+          <ScalarProperty Name="ID_PAGAMENTO" ColumnName="ID_PAGAMENTO" />
+          <ScalarProperty Name="NOME_PAGAMENTO" ColumnName="NOME_PAGAMENTO" />
+          <ScalarProperty Name="VALOR_PAGAMENTO" ColumnName="VALOR_PAGAMENTO" />
+          <ScalarProperty Name="ID_TIPO_ATENDIMENTO" ColumnName="ID_TIPO_ATENDIMENTO" />
+          <ScalarProperty Name="DIVIDO_VEZES" ColumnName="DIVIDO_VEZES" />
+          <ScalarProperty Name="DATA_FECHAMENTO" ColumnName="DATA_FECHAMENTO" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="PAGAMENTOS_INTERNACAO">
+      <EntityTypeMapping TypeName="IsTypeOf(LOJA_PETModel.PAGAMENTOS_INTERNACAO)">
+        <MappingFragment StoreEntitySet="PAGAMENTOS_INTERNACAO">
+          <ScalarProperty Name="ID_ASSOCIACAO" ColumnName="ID_ASSOCIACAO" />
+          <ScalarProperty Name="ID_PAGAMENTO" ColumnName="ID_PAGAMENTO" />
+          <ScalarProperty Name="NOME_PAGAMENTO" ColumnName="NOME_PAGAMENTO" />
+          <ScalarProperty Name="VALOR_PAGAMENTO" ColumnName="VALOR_PAGAMENTO" />
+          <ScalarProperty Name="ID_TIPO_ATENDIMENTO" ColumnName="ID_TIPO_ATENDIMENTO" />
+          <ScalarProperty Name="DIVIDO_VEZES" ColumnName="DIVIDO_VEZES" />
+          <ScalarProperty Name="DATA_FECHAMENTO" ColumnName="DATA_FECHAMENTO" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="PERFIL">
+      <EntityTypeMapping TypeName="IsTypeOf(LOJA_PETModel.PERFIL)">
+        <MappingFragment StoreEntitySet="PERFIL">
+          <ScalarProperty Name="ID_PERFIL" ColumnName="ID_PERFIL" />
+          <ScalarProperty Name="DESCRICAO" ColumnName="DESCRICAO" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="PETS">
+      <EntityTypeMapping TypeName="IsTypeOf(LOJA_PETModel.PET)">
+        <MappingFragment StoreEntitySet="PETS">
+          <ScalarProperty Name="ID_PET" ColumnName="ID_PET" />
+          <ScalarProperty Name="NOME_PET" ColumnName="NOME_PET" />
+          <ScalarProperty Name="COD_CLIENTE" ColumnName="COD_CLIENTE" />
+          <ScalarProperty Name="RACA_PET" ColumnName="RACA_PET" />
+          <ScalarProperty Name="SEXO_PET" ColumnName="SEXO_PET" />
+          <ScalarProperty Name="DATANASC_PET" ColumnName="DATANASC_PET" />
+          <ScalarProperty Name="IDADE" ColumnName="IDADE" />
+          <ScalarProperty Name="ESPECIE_PET" ColumnName="ESPECIE_PET" />
+          <ScalarProperty Name="ATIVO" ColumnName="ATIVO" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="PROPRIETARIOS">
+      <EntityTypeMapping TypeName="IsTypeOf(LOJA_PETModel.PROPRIETARIO)">
+        <MappingFragment StoreEntitySet="PROPRIETARIOS">
+          <ScalarProperty Name="ID_PROPRIETARIO" ColumnName="ID_PROPRIETARIO" />
+          <ScalarProperty Name="NOME_PROPRIETARIO" ColumnName="NOME_PROPRIETARIO" />
+          <ScalarProperty Name="EMAIL" ColumnName="EMAIL" />
+          <ScalarProperty Name="CELULAR" ColumnName="CELULAR" />
+          <ScalarProperty Name="FIXO" ColumnName="FIXO" />
+          <ScalarProperty Name="CEP" ColumnName="CEP" />
+          <ScalarProperty Name="RUA_AVENIDA" ColumnName="RUA_AVENIDA" />
+          <ScalarProperty Name="NUMERO" ColumnName="NUMERO" />
+          <ScalarProperty Name="BAIRRO" ColumnName="BAIRRO" />
+          <ScalarProperty Name="CIDADE" ColumnName="CIDADE" />
+          <ScalarProperty Name="ESTADO" ColumnName="ESTADO" />
+          <ScalarProperty Name="ATIVO" ColumnName="ATIVO" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="RECEITA">
+      <EntityTypeMapping TypeName="IsTypeOf(LOJA_PETModel.RECEITA)">
+        <MappingFragment StoreEntitySet="RECEITA">
+          <ScalarProperty Name="ID_RECEITA" ColumnName="ID_RECEITA" />
+          <ScalarProperty Name="ID_ATENDIMENTO" ColumnName="ID_ATENDIMENTO" />
+          <ScalarProperty Name="ID_INTERNACAO" ColumnName="ID_INTERNACAO" />
+          <ScalarProperty Name="ID_CIRURGIA" ColumnName="ID_CIRURGIA" />
+          <ScalarProperty Name="DESCRICAO_RECEITA" ColumnName="DESCRICAO_RECEITA" />
+          <ScalarProperty Name="DADOS_RECEITA" ColumnName="DADOS_RECEITA" />
+          <ScalarProperty Name="DATA_RECEITA" ColumnName="DATA_RECEITA" />
+          <ScalarProperty Name="ATIVA" ColumnName="ATIVA" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="SERVICO">
+      <EntityTypeMapping TypeName="IsTypeOf(LOJA_PETModel.SERVICO)">
+        <MappingFragment StoreEntitySet="SERVICO">
+          <ScalarProperty Name="ID_SERVICO" ColumnName="ID_SERVICO" />
+          <ScalarProperty Name="NOME_SERVICO" ColumnName="NOME_SERVICO" />
+          <ScalarProperty Name="VALOR_SERVICO" ColumnName="VALOR_SERVICO" />
+          <ScalarProperty Name="ATIVO" ColumnName="ATIVO" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="SERVICO_VETERINARIO">
+      <EntityTypeMapping TypeName="IsTypeOf(LOJA_PETModel.SERVICO_VETERINARIO)">
+        <MappingFragment StoreEntitySet="SERVICO_VETERINARIO">
+          <ScalarProperty Name="ID_ASSOCIACAO" ColumnName="ID_ASSOCIACAO" />
+          <ScalarProperty Name="ID_SERVICO" ColumnName="ID_SERVICO" />
+          <ScalarProperty Name="NOME_SERVICO" ColumnName="NOME_SERVICO" />
+          <ScalarProperty Name="VALOR_SERVICO" ColumnName="VALOR_SERVICO" />
+          <ScalarProperty Name="ID_ATENDIMENTO" ColumnName="ID_ATENDIMENTO" />
+          <ScalarProperty Name="ID_INTERNACAO" ColumnName="ID_INTERNACAO" />
+          <ScalarProperty Name="ID_VET" ColumnName="ID_VET" />
+          <ScalarProperty Name="DATA_EXECUCAO" ColumnName="DATA_EXECUCAO" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="TOTAL_ATENDIMENTO">
+      <EntityTypeMapping TypeName="IsTypeOf(LOJA_PETModel.TOTAL_ATENDIMENTO)">
+        <MappingFragment StoreEntitySet="TOTAL_ATENDIMENTO">
+          <ScalarProperty Name="ID_ASSOCIACAO" ColumnName="ID_ASSOCIACAO" />
+          <ScalarProperty Name="ID_ATENDIMENTO" ColumnName="ID_ATENDIMENTO" />
+          <ScalarProperty Name="SUBTOTAL" ColumnName="SUBTOTAL" />
+          <ScalarProperty Name="DESCONTO" ColumnName="DESCONTO" />
+          <ScalarProperty Name="ACRESCIMO" ColumnName="ACRESCIMO" />
+          <ScalarProperty Name="TOTAL" ColumnName="TOTAL" />
+          <ScalarProperty Name="DATA_FINALIZACAO" ColumnName="DATA_FINALIZACAO" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="TOTAL_INTERNACAO_CIRURGIA">
+      <EntityTypeMapping TypeName="IsTypeOf(LOJA_PETModel.TOTAL_INTERNACAO_CIRURGIA)">
+        <MappingFragment StoreEntitySet="TOTAL_INTERNACAO_CIRURGIA">
+          <ScalarProperty Name="ID_ASSOCIACAO" ColumnName="ID_ASSOCIACAO" />
+          <ScalarProperty Name="ID_INTERNACAO" ColumnName="ID_INTERNACAO" />
+          <ScalarProperty Name="ID_CIRURGIA" ColumnName="ID_CIRURGIA" />
+          <ScalarProperty Name="SUBTOTAL" ColumnName="SUBTOTAL" />
+          <ScalarProperty Name="DESCONTO" ColumnName="DESCONTO" />
+          <ScalarProperty Name="ACRESCIMO" ColumnName="ACRESCIMO" />
+          <ScalarProperty Name="TOTAL" ColumnName="TOTAL" />
+          <ScalarProperty Name="DATA_FINALIZACAO" ColumnName="DATA_FINALIZACAO" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Tributacao">
+      <EntityTypeMapping TypeName="IsTypeOf(LOJA_PETModel.Tributacao)">
+        <MappingFragment StoreEntitySet="Tributacao">
+          <ScalarProperty Name="ID_TRIB" ColumnName="ID_TRIB" />
+          <ScalarProperty Name="TRBID" ColumnName="TRBID" />
+          <ScalarProperty Name="NOME" ColumnName="NOME" />
+          <ScalarProperty Name="CST_ENTRADA" ColumnName="CST_ENTRADA" />
+          <ScalarProperty Name="CSOSN_ENTRADA" ColumnName="CSOSN_ENTRADA" />
+          <ScalarProperty Name="CFOP_ENTRADA_DE" ColumnName="CFOP_ENTRADA_DE" />
+          <ScalarProperty Name="CFOP_ENTRADA_DEV_DE" ColumnName="CFOP_ENTRADA_DEV_DE" />
+          <ScalarProperty Name="CFOP_ENTRADA_DEV_FE" ColumnName="CFOP_ENTRADA_DEV_FE" />
+          <ScalarProperty Name="CFOP_ENTRADA_FE" ColumnName="CFOP_ENTRADA_FE" />
+          <ScalarProperty Name="CST_SAIDA" ColumnName="CST_SAIDA" />
+          <ScalarProperty Name="CSOSN_SAIDA" ColumnName="CSOSN_SAIDA" />
+          <ScalarProperty Name="CFOP_SAIDA_DE" ColumnName="CFOP_SAIDA_DE" />
+          <ScalarProperty Name="CFOP_SAIDA_FE" ColumnName="CFOP_SAIDA_FE" />
+          <ScalarProperty Name="CFOP_SAIDA_DEV_DE" ColumnName="CFOP_SAIDA_DEV_DE" />
+          <ScalarProperty Name="CFOP_SAIDA_DEV_FE" ColumnName="CFOP_SAIDA_DEV_FE" />
+          <ScalarProperty Name="ATIVO" ColumnName="ATIVO" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="USUARIOS">
+      <EntityTypeMapping TypeName="IsTypeOf(LOJA_PETModel.USUARIOS)">
+        <MappingFragment StoreEntitySet="USUARIOS">
+          <ScalarProperty Name="Id_USUARIO" ColumnName="Id_USUARIO" />
+          <ScalarProperty Name="NOME" ColumnName="NOME" />
+          <ScalarProperty Name="lOGIN" ColumnName="lOGIN" />
+          <ScalarProperty Name="SENHA" ColumnName="SENHA" />
+          <ScalarProperty Name="CONTRA_SENHA" ColumnName="CONTRA_SENHA" />
+          <ScalarProperty Name="Email" ColumnName="Email" />
+          <ScalarProperty Name="ID_PERFIL" ColumnName="ID_PERFIL" />
+          <ScalarProperty Name="ATIVO" ColumnName="ATIVO" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="VET_CIRURGIA">
+      <EntityTypeMapping TypeName="IsTypeOf(LOJA_PETModel.VET_CIRURGIA)">
+        <MappingFragment StoreEntitySet="VET_CIRURGIA">
+          <ScalarProperty Name="ID_ASSOCIACAO" ColumnName="ID_ASSOCIACAO" />
+          <ScalarProperty Name="ID_VET" ColumnName="ID_VET" />
+          <ScalarProperty Name="ID_CIRURGIA" ColumnName="ID_CIRURGIA" />
+          <ScalarProperty Name="DIVIDIR_CIRURGIA" ColumnName="DIVIDIR_CIRURGIA" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Veterinarios">
+      <EntityTypeMapping TypeName="IsTypeOf(LOJA_PETModel.Veterinarios)">
+        <MappingFragment StoreEntitySet="Veterinarios">
+          <ScalarProperty Name="ID_VET" ColumnName="ID_VET" />
+          <ScalarProperty Name="NOME_VET" ColumnName="NOME_VET" />
+          <ScalarProperty Name="CPF" ColumnName="CPF" />
+          <ScalarProperty Name="CRMV" ColumnName="CRMV" />
+          <ScalarProperty Name="TELEFONE" ColumnName="TELEFONE" />
+          <ScalarProperty Name="CELULAR" ColumnName="CELULAR" />
+          <ScalarProperty Name="ATIVO" ColumnName="ATIVO" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="TAXAS">
+      <EntityTypeMapping TypeName="IsTypeOf(LOJA_PETModel.TAXAS)">
+        <MappingFragment StoreEntitySet="TAXAS">
+          <ScalarProperty Name="ID_TAXAS" ColumnName="ID_TAXAS" />
+          <ScalarProperty Name="DESCRICAOTX" ColumnName="DESCRICAOTX" />
+          <ScalarProperty Name="TAXACREDITO1" ColumnName="TAXACREDITO1" />
+          <ScalarProperty Name="TAXACREDITO2" ColumnName="TAXACREDITO2" />
+          <ScalarProperty Name="TAXACREDITO3" ColumnName="TAXACREDITO3" />
+          <ScalarProperty Name="TAXACREDITO4" ColumnName="TAXACREDITO4" />
+          <ScalarProperty Name="TAXACREDITO5" ColumnName="TAXACREDITO5" />
+          <ScalarProperty Name="TAXACREDITO6" ColumnName="TAXACREDITO6" />
+          <ScalarProperty Name="TAXACREDITO7" ColumnName="TAXACREDITO7" />
+          <ScalarProperty Name="TAXACREDITO10" ColumnName="TAXACREDITO10" />
+          <ScalarProperty Name="TAXADEBITO" ColumnName="TAXADEBITO" />
+          <ScalarProperty Name="TAXABOLETO" ColumnName="TAXABOLETO" />
+          <ScalarProperty Name="P_DIV" ColumnName="P_DIV" />
+          <ScalarProperty Name="ATIVO" ColumnName="ATIVO" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="b_pessoas_empresa_pet">
+      <EntityTypeMapping TypeName="IsTypeOf(LOJA_PETModel.b_pessoas_empresa_pet)">
+        <MappingFragment StoreEntitySet="b_pessoas_empresa_pet">
+          <ScalarProperty Name="NOME_PET" ColumnName="NOME_PET" />
+          <ScalarProperty Name="ID_PET" ColumnName="ID_PET" />
+          <ScalarProperty Name="RACA_PET" ColumnName="RACA_PET" />
+          <ScalarProperty Name="SEXO_PET" ColumnName="SEXO_PET" />
+          <ScalarProperty Name="NOME_PROPRIETARIO" ColumnName="NOME_PROPRIETARIO" />
+          <ScalarProperty Name="ATIVO" ColumnName="ATIVO" />
+          <ScalarProperty Name="RAZAO_SOCIAL" ColumnName="RAZAO_SOCIAL" />
+          <ScalarProperty Name="ESPECIE_PET" ColumnName="ESPECIE_PET" />
+          <ScalarProperty Name="IDADE" ColumnName="IDADE" />
+          <ScalarProperty Name="CELULAR" ColumnName="CELULAR" />
+          <ScalarProperty Name="FIXO" ColumnName="FIXO" />
+          <ScalarProperty Name="CIDADE" ColumnName="CIDADE" />
+          <ScalarProperty Name="ESTADO" ColumnName="ESTADO" />
+          <ScalarProperty Name="FANTASIA" ColumnName="FANTASIA" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+  </EntityContainerMapping>
+</Mapping></edmx:Mappings>
+  </edmx:Runtime>
+  <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <Connection>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="MetadataArtifactProcessing" Value="EmbedInOutputAssembly" />
+      </DesignerInfoPropertySet>
+    </Connection>
+    <Options>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="ValidateOnBuild" Value="true" />
+        <DesignerProperty Name="EnablePluralization" Value="false" />
+        <DesignerProperty Name="IncludeForeignKeysInModel" Value="true" />
+        <DesignerProperty Name="UseLegacyProvider" Value="False" />
+        <DesignerProperty Name="CodeGenerationStrategy" Value="None" />
+      </DesignerInfoPropertySet>
+    </Options>
+    <!-- Diagram content (shape and connector positions) -->
+    <Diagrams></Diagrams>
+  </Designer>
+</edmx:Edmx>

@@ -1,0 +1,84 @@
+<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+ <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <!-- Diagram content (shape and connector positions) -->
+    <edmx:Diagrams>
+      <Diagram DiagramId="eced3ed5619e4db788df3e3f7ccc42d6" Name="Diagram1" ZoomLevel="26" >
+        <EntityTypeShape EntityType="LOJA_PETModel.ATENDIMENTO_VET" Width="1.5" PointX="22.125" PointY="5.375" />
+        <EntityTypeShape EntityType="LOJA_PETModel.CEP" Width="1.5" PointX="1.5" PointY="17.25" />
+        <EntityTypeShape EntityType="LOJA_PETModel.CFOP" Width="1.5" PointX="27" PointY="11.75" />
+        <EntityTypeShape EntityType="LOJA_PETModel.CIRURGIA" Width="1.5" PointX="14.625" PointY="10.875" />
+        <EntityTypeShape EntityType="LOJA_PETModel.CLIENTE" Width="1.5" PointX="9.25" PointY="15.625" />
+        <EntityTypeShape EntityType="LOJA_PETModel.Compromissos" Width="1.5" PointX="5.875" PointY="19.25" />
+        <EntityTypeShape EntityType="LOJA_PETModel.CONFIG" Width="1.5" PointX="4.625" PointY="11.25" />
+        <EntityTypeShape EntityType="LOJA_PETModel.EMAIL" Width="1.5" PointX="3.625" PointY="15.125" />
+        <EntityTypeShape EntityType="LOJA_PETModel.EMPRESA" Width="1.5" PointX="2.5" PointY="7.875" />
+        <EntityTypeShape EntityType="LOJA_PETModel.EMPRESA_EMAIL" Width="1.5" PointX="0.5" PointY="14" />
+        <EntityTypeShape EntityType="LOJA_PETModel.EMPRESA_USUARIO" Width="1.5" PointX="5" PointY="8" />
+        <EntityTypeShape EntityType="LOJA_PETModel.EMPRESA_VETERINARIO" Width="1.5" PointX="7.125" PointY="14.125" />
+        <EntityTypeShape EntityType="LOJA_PETModel.GRP" Width="1.5" PointX="7.125" PointY="16.5" />
+        <EntityTypeShape EntityType="LOJA_PETModel.INTERNACAO" Width="1.5" PointX="19.125" PointY="10.75" />
+        <EntityTypeShape EntityType="LOJA_PETModel.PAGAMENTOS" Width="1.5" PointX="18.75" PointY="19.75" />
+        <EntityTypeShape EntityType="LOJA_PETModel.PAGAMENTOS_ATENDIMENTOS" Width="1.75" PointX="21.5" PointY="19.375" />
+        <EntityTypeShape EntityType="LOJA_PETModel.PAGAMENTOS_INTERNACAO" Width="1.5" PointX="21.25" PointY="15.75" />
+        <EntityTypeShape EntityType="LOJA_PETModel.PERFIL" Width="1.5" PointX="10.625" PointY="7.625" />
+        <EntityTypeShape EntityType="LOJA_PETModel.PET" Width="1.5" PointX="14.875" PointY="15.875" />
+        <EntityTypeShape EntityType="LOJA_PETModel.PROPRIETARIO" Width="1.5" PointX="11.75" PointY="15.875" />
+        <EntityTypeShape EntityType="LOJA_PETModel.RECEITA" Width="1.5" PointX="24.375" PointY="11.25" />
+        <EntityTypeShape EntityType="LOJA_PETModel.SERVICO" Width="1.5" PointX="28.875" PointY="10.125" />
+        <EntityTypeShape EntityType="LOJA_PETModel.SERVICO_VETERINARIO" Width="1.5" PointX="21.375" PointY="11.25" />
+        <EntityTypeShape EntityType="LOJA_PETModel.TOTAL_ATENDIMENTO" Width="1.5" PointX="19.125" PointY="16.5" />
+        <EntityTypeShape EntityType="LOJA_PETModel.TOTAL_INTERNACAO_CIRURGIA" Width="1.5" PointX="24.375" PointY="7.25" />
+        <EntityTypeShape EntityType="LOJA_PETModel.Tributacao" Width="1.5" PointX="23.375" PointY="15.5" />
+        <EntityTypeShape EntityType="LOJA_PETModel.USUARIOS" Width="1.5" PointX="7.625" PointY="7.375" />
+        <EntityTypeShape EntityType="LOJA_PETModel.VET_CIRURGIA" Width="1.5" PointX="26" PointY="17.5" />
+        <EntityTypeShape EntityType="LOJA_PETModel.Veterinarios" Width="1.5" PointX="9.375" PointY="11.125" />
+        <AssociationConnector Association="LOJA_PETModel.FK_ATENDIMENTO_VETINTERNACAO" />
+        <AssociationConnector Association="LOJA_PETModel.FK_ATENDIMENTO_VETRECEITA" />
+        <AssociationConnector Association="LOJA_PETModel.FK_ATENDIMENTO_VETSERVICO_VETERINARIO" />
+        <AssociationConnector Association="LOJA_PETModel.FK_ATENDIMENTO_VETTOTAL_ATENDIMENTO" />
+        <AssociationConnector Association="LOJA_PETModel.FK_CIRURGIAATENDIMENTO_VET" />
+        <AssociationConnector Association="LOJA_PETModel.FK_ClienteATENDIMENTO_VET" />
+        <AssociationConnector Association="LOJA_PETModel.FK_EMPRESAATENDIMENTO_VET" />
+        <AssociationConnector Association="LOJA_PETModel.FK_PETATENDIMENTO_VET" />
+        <AssociationConnector Association="LOJA_PETModel.FK_VeterinariosATENDIMENTO_VET" />
+        <AssociationConnector Association="LOJA_PETModel.FK_CIRURGIAINTERNACAO" />
+        <AssociationConnector Association="LOJA_PETModel.FK_CIRURGIATOTAL_INTERNACAO_CIRURGIA" />
+        <AssociationConnector Association="LOJA_PETModel.FK_CIRURGIATOTAL_INTERNACAO_CIRURGIA1" />
+        <AssociationConnector Association="LOJA_PETModel.FK_CIRURGIAVET_CIRURGIA" />
+        <AssociationConnector Association="LOJA_PETModel.FK_ClienteCIRURGIA" />
+        <AssociationConnector Association="LOJA_PETModel.FK_EMPRESACIRURGIA" />
+        <AssociationConnector Association="LOJA_PETModel.FK_PETCIRURGIA" />
+        <AssociationConnector Association="LOJA_PETModel.FK_RECEITACIRURGIA" />
+        <AssociationConnector Association="LOJA_PETModel.FK_VeterinariosCIRURGIA" />
+        <AssociationConnector Association="LOJA_PETModel.FK_EMPRESACONFIG" />
+        <AssociationConnector Association="LOJA_PETModel.FK_EMAILEMPRESA_EMAIL" />
+        <AssociationConnector Association="LOJA_PETModel.FK_EMPRESA_EMAIL1" />
+        <AssociationConnector Association="LOJA_PETModel.FK_EMPRESAEMPRESA_USUARIO" />
+        <AssociationConnector Association="LOJA_PETModel.FK_EMPRESAEMPRESA_VETERINARIO" />
+        <AssociationConnector Association="LOJA_PETModel.FK_EMPRESAINTERNACAO" />
+        <AssociationConnector Association="LOJA_PETModel.FK_USUARIOSEMPRESA_USUARIO" />
+        <AssociationConnector Association="LOJA_PETModel.FK_VeterinariosEMPRESA_VETERINARIO" />
+        <AssociationConnector Association="LOJA_PETModel.FK_ClienteINTERNACAO" />
+        <AssociationConnector Association="LOJA_PETModel.FK_INTERNACAORECEITA" />
+        <AssociationConnector Association="LOJA_PETModel.FK_INTERNACAOSERVICO_VETERINARIO" />
+        <AssociationConnector Association="LOJA_PETModel.FK_INTERNACAOTOTAL_INTERNACAO" />
+        <AssociationConnector Association="LOJA_PETModel.FK_PETINTERNACAO" />
+        <AssociationConnector Association="LOJA_PETModel.FK_VeterinariosINTERNACAO" />
+        <AssociationConnector Association="LOJA_PETModel.FK_PAGAMENTOSPAGAMENTOS_ATENDIMENTO" />
+        <AssociationConnector Association="LOJA_PETModel.FK_PAGAMENTOSPAGAMENTOS_INTERNACAO" />
+        <AssociationConnector Association="LOJA_PETModel.FK_TOTAL_ATENDIMENTOPAGAMENTOS_ATENDIMENTO" />
+        <AssociationConnector Association="LOJA_PETModel.FK_TOTAL_ATENDIMENTOPAGAMENTOS_ATENDIMENTO1" />
+        <AssociationConnector Association="LOJA_PETModel.FK_PERFILUSUARIOS" />
+        <AssociationConnector Association="LOJA_PETModel.FK_PETCliente" />
+        <AssociationConnector Association="LOJA_PETModel.FK_SERVICOSERVICO_VETERINARIO" />
+        <AssociationConnector Association="LOJA_PETModel.FK_VeterinariosSERVICO_VETERINARIO" />
+        <AssociationConnector Association="LOJA_PETModel.FK_VeterinariosVET_CIRURGIA" />
+        <EntityTypeShape EntityType="LOJA_PETModel.TAXAS" PointX="15.125" PointY="20" Width="1.5" />
+        <AssociationConnector Association="LOJA_PETModel.TAXASPAGAMENTOS" />
+        <EntityTypeShape EntityType="LOJA_PETModel.b_pessoas_empresa_pet" Width="1.5" PointX="0.75" PointY="0.75" />
+      </Diagram>
+    </edmx:Diagrams>
+  </edmx:Designer>
+</edmx:Edmx>
